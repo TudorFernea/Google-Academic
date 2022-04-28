@@ -19,6 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    // TODO: change this part so it is connected with the frontend
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -28,8 +29,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
-                .formLogin();
+                .formLogin()
+                    .loginPage("/login.html")
+                    .failureUrl("/login-error.html")
+                    .permitAll()
+                .and()
+                .logout().logoutSuccessUrl("/").permitAll();
     }
+
+    /* @Override
+    protected void configure(AuthenticationManagerBuilder auth)
+            throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("user")
+                .password("password")
+                .roles("USER");
+    }*/
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

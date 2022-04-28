@@ -41,6 +41,12 @@ public class RegistrationService {
             throw new IllegalStateException("last name not valid");
         }
 
+        if(!request.getPassword().equals(request.getConfirmationPassword()))
+        {
+            throw new IllegalStateException("confirmation password does not match with the initial password");
+        }
+
+        // TODO: Handle the type of user and create the object to respect to that
         return userService.signUpUser(new User(request.getUsername(), request.getPassword(), request.getEmail(), request.getFirstName(),
                 request.getLastName(), AppUserRole.USER));
     }

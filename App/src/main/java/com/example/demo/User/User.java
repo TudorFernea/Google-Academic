@@ -34,6 +34,8 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
+    private String confirmationPassword;
+    private String role;
     private String email;
     private String firstName;
     private String lastName;
@@ -54,6 +56,16 @@ public class User implements UserDetails {
     public User(String username, String password, String email, String firstName, String lastName) {
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public User(String username, String password, String confirmationPassword, String role, String email, String firstName, String lastName) {
+        this.username = username;
+        this.password = password;
+        this.confirmationPassword = confirmationPassword;
+        this.role = role;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -105,7 +117,7 @@ public class User implements UserDetails {
         return Collections.singletonList(authority);
     }
 
-    public Long getId() {
+    /* public Long getId() {
         return id;
     }
 
@@ -152,7 +164,7 @@ public class User implements UserDetails {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
+    */
     @Override
     public String toString() {
         return "User{" +
