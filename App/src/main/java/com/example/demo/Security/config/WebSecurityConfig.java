@@ -30,22 +30,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated().and()
                 .formLogin()
-                    .loginPage("/login.html")
+                    .loginPage("/App/demo/app/login/login.component.html")
                     .failureUrl("/login-error.html")
                     .permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/").permitAll();
     }
-
-    /* @Override
-    protected void configure(AuthenticationManagerBuilder auth)
-            throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("user")
-                .password("password")
-                .roles("USER");
-    }*/
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
