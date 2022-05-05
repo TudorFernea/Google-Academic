@@ -10,7 +10,7 @@ import java.util.List;
 public class OptionalConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(OptionalRepository repository){
+    CommandLineRunner commandLineRunner1(OptionalRepository repository){
         return args -> {
             OptionalDiscipline ion = new OptionalDiscipline(
                     "Ion",

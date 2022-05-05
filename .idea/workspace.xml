@@ -5,7 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/register.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/register.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/student-page/student-page-component.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/student-page/student-page-component.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/student-page/student-page-component.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/app/student-page/student-page-component.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/assets/t2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginFront/src/test.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +74,12 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="280DZZawX76zVQF8HXtfCjJ3djU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,8 +88,30 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Iulia\Documents\GitHub\Google-Academic" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Iulia\Documents\GitHub\Google-Academic\App\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.AcademicApplication">
+    <configuration name="AcademicApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.AcademicApplication" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AcademicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.AcademicApplication" />
@@ -51,6 +119,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AcademicApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

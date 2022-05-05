@@ -17,7 +17,7 @@
         <form [formGroup]="loginForm" class="inputLogin">
 
             <label for="email" >Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Type your email here... " formControlName="email">
+            <input type="email" id="email" name="email" placeholder="Type your email here... " formControlName="email" required="">
             <br>
             <br>
             <label for="password">Password:</label><br>
@@ -39,15 +39,6 @@
 
         </form>
 
-        <fieldset [disabled]=true class="studentOrTeacherCheckbox">
-            
-            <input type="radio" class="inputRadio" id="studentOption" name="student" value="Student" >
-            <label for="studentOption"> I'm a student</label><br>
-            <input type="radio" id="teacherOption" name="teacher" value="Teacher" class="inputRadio">
-            <label for="teacherOption"> I'm a teacher</label>
-        </fieldset>
-
-
 
 
 
@@ -66,7 +57,7 @@
 
 </div>
 
-<div class="Chenar" *ngIf="  signUp  " >
+<div class="ChenarSignUp" *ngIf="  signUp  " >
     <h1 class="title createAcc"> Create account </h1>
     <div>
 
@@ -79,10 +70,15 @@
             <input type="text" id="surnameSignUp" name="surnameSignUp" placeholder="Surname">
             <br>
             <br>
-
             <input type="text" id="usernameSignUp" name="usernameSignUp" placeholder="Username">
             <br>
             <br>
+
+            <input type="email" field="*{email}" id="emailSignUp" name="emailSignUp" placeholder="Email">
+            <br>
+            <br>
+
+            
 
             <input type="password" id="passwordFirst" name="passwordFirst" placeholder="Password">
             <br>
@@ -91,10 +87,19 @@
 
         </form>
 
+        <form [formGroup]="positionForm" (ngSubmit)="signUpStudent()"  class="studentOrTeacherCheckbox">
+            
+            <input type="radio"  (change)="getRadioValue()" class="inputRadio" id="studentOption" name="position" value="Student" formControlName="position" >
+            <label for="studentOption"> I'm a student</label><br>
+            <input type="radio" (change)="getRadioValue()" id="teacherOption" name="position" value="teacher" class="inputRadio" formControlName="position">
+            <label for="teacherOption"> I'm a teacher</label>
+        </form>
+
+
     </div>
     <br>
         <div class="parinteleButonului">
-            <button class="btn-grad">
+            <button type="submit" (click)="signUpStudent()" class="btn-grad">
                 Sign up
             </button>
         </div>

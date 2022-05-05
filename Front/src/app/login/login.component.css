@@ -129,6 +129,8 @@ a{
 .studentOrTeacherCheckbox{
     /* height: 0px;
     width: 0px; */
+    padding-left: 15%;
+    padding-top: 5%;
 }
 
 .inputRadio{
@@ -136,3 +138,22 @@ a{
     width: 10%; 
 
 }
+
+.ChenarSignUp{
+    width: 35vw;
+    height: 80vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+    align-items: center;
+   
+    padding: 0.5vw;
+   padding-top: 1.5vh;
+   padding-bottom: 3.5vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    color: black;
+   
+  }
+  

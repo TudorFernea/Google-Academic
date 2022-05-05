@@ -7,7 +7,7 @@ import { catchError, Observable, of } from "rxjs";
 })
 export class RegisterService {
 
-  private logInUrl: string="api/v1/Registration";
+  private logInUrl: string="api/Login";
 
   constructor(
     private http: HttpClient,
