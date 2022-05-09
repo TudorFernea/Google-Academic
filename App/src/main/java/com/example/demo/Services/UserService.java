@@ -1,5 +1,7 @@
-package com.example.demo.User;
+package com.example.demo.Services;
 
+import com.example.demo.Models.User;
+import com.example.demo.Repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import  org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("UserService")
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
 

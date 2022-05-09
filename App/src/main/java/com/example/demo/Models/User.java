@@ -1,4 +1,4 @@
-package com.example.demo.User;
+package com.example.demo.Models;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,7 +31,7 @@ public class User implements UserDetails {
             generator = "user_sequence"
     )
 
-    private Long id;
+    private Integer id;
     private String username;
     private String password;
     private String email;
@@ -42,7 +42,7 @@ public class User implements UserDetails {
     private Boolean locked = false;
     private Boolean enabled = true;
 
-    public User(Long id, String username, String password, String email, String firstName, String lastName) {
+    public User(Integer id, String username, String password, String email, String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -105,7 +105,7 @@ public class User implements UserDetails {
         return Collections.singletonList(authority);
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -129,7 +129,7 @@ public class User implements UserDetails {
         return lastName;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
