@@ -5,7 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/register.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/register.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/student-page/student-page-component.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/student-page/student-page-component.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/student-page/student-page-component.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/app/student-page/student-page-component.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/assets/t2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/test.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +67,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Facultate/Semestrul 4/Software Engineering/Project/Google-Academic",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="AcademicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="demo" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="Google-Academic" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.AcademicApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -61,6 +95,8 @@
       <option name="presentableId" value="Default" />
       <updated>1650344675340</updated>
       <workItem from="1650344680966" duration="7159000" />
+      <workItem from="1651247055750" duration="91000" />
+      <workItem from="1651255754537" duration="1410000" />
     </task>
     <servers />
   </component>
