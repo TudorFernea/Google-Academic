@@ -18,6 +18,7 @@ import java.util.Collections;
 @NoArgsConstructor
 @Entity(name="Users")
 @Table(name="Users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User implements UserDetails {
 
     @Id
@@ -30,7 +31,7 @@ public class User implements UserDetails {
             strategy = GenerationType.SEQUENCE,
             generator = "user_sequence"
     )
-    private Integer id;
+    protected Integer id;
     private String username;
     private String password;
     private String email;

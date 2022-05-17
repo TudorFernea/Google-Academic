@@ -7,6 +7,7 @@ import java.util.Objects;
 
 @Entity(name = "Student")
 @Table(name = "student")
+@PrimaryKeyJoinColumn(name = "id")
 public class Student extends User {
 
     public Student() {
@@ -18,17 +19,6 @@ public class Student extends User {
         this.yearOfStudy2 = yearOfStudy2;
     }
 
-    @Id
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
-    )
-    private Integer id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "year_of_study1")
@@ -59,10 +49,6 @@ public class Student extends User {
 
     public List<Choice> getChoiceList() {
         return choiceList;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public void setYearOfStudy1(YearOfStudy yearOfStudy1) {
