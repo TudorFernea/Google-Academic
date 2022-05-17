@@ -4,9 +4,9 @@ import com.example.demo.Registration.Validators.EmailValidator;
 import com.example.demo.Registration.Validators.FirstNameValidator;
 import com.example.demo.Registration.Validators.LastNameValidator;
 import com.example.demo.Registration.Validators.UsernameValidator;
-import com.example.demo.User.AppUserRole;
-import com.example.demo.User.User;
-import com.example.demo.User.UserService;
+import com.example.demo.Models.AppUserRole;
+import com.example.demo.Models.User;
+import com.example.demo.Services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

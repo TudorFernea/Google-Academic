@@ -6,8 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
-@RestController
-@RequestMapping(path = "api/v1/Registration")
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController("RegistrationController")
+@RequestMapping(path = "api/Registration")
 @AllArgsConstructor
 public class RegistrationController {
 
