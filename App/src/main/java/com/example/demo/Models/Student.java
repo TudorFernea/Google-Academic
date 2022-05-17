@@ -12,14 +12,8 @@ public class Student extends User {
     public Student() {
     }
 
-    public Student(Integer id, YearOfStudy yearOfStudy1, YearOfStudy yearOfStudy2) {
-        this.id = id;
-        this.yearOfStudy1 = yearOfStudy1;
-        this.yearOfStudy2 = yearOfStudy2;
-    }
-
-    public Student(Integer id, String username, String password, String email, String firstName, String lastName, YearOfStudy yearOfStudy1, YearOfStudy yearOfStudy2) {
-        super(id, username, password, email, firstName, lastName);
+    public Student(String username, String password, String email, String firstName, String lastName, YearOfStudy yearOfStudy1, YearOfStudy yearOfStudy2) {
+        super(username, password, email, firstName, lastName);
         this.yearOfStudy1 = yearOfStudy1;
         this.yearOfStudy2 = yearOfStudy2;
     }

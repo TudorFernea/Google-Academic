@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController("GradeController")
-@RequestMapping(path="api/grades")
+@RequestMapping(value="api/grades")
 public class GradeController {
     private final GradeService gradeService;
 
@@ -20,7 +20,7 @@ public class GradeController {
         this.gradeService = gradeService;
     }
 
-    @GetMapping(value="/bystudent")
+    @GetMapping(value="/bystudent") // view grades
     public List<Grade> getGradesByStudent(@RequestBody Student student){
         return gradeService.getGradesByStudent(student);
     }

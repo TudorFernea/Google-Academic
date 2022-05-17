@@ -5,48 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/CurriculumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Choice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Curriculum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Grade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/YearOfStudy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/ChoiceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/CurriculumRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/DisciplineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/GradeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/YearOfStudyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/ChoiceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/CurriculumService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/GradeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/YearOfStudyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalDiscipline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Optional/OptionalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/CurriculumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/CurriculumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Student/StudentConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Student/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Student/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/AppUserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/AppUserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/UserConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/User/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/sign-up.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/sign-up.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,9 +77,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunManager" selected="Application.AcademicApplication">
     <configuration name="AcademicApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
       <option name="MAIN_CLASS_NAME" value="com.example.demo.AcademicApplication" />
       <module name="demo" />
       <extension name="coverage">
@@ -123,6 +101,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AcademicApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AcademicApplication" />

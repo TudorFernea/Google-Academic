@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 @Configuration
 @AllArgsConstructor
@@ -24,11 +25,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("https://localhost:4200")
+                .antMatchers("http://localhost:4200")
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
                 .formLogin();
+        http.headers()
+                .addHeaderWriter(
+                        new StaticHeadersWriter("Access-Control-Allow-Origin", "http://localhost:4200")
+                );
+        //http.headers().httpStrictTransportSecurity().disable();
     }
 
     @Override

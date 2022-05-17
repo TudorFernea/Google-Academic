@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController("CurriculumController")
-@RequestMapping(path="api/curriculum")
+@RequestMapping(value="api/curriculum")
 public class CurriculumController {
     private final CurriculumService curriculumService;
 
@@ -20,7 +20,7 @@ public class CurriculumController {
         this.curriculumService = curriculumService;
     }
 
-    @GetMapping
+    @GetMapping("/curriculums")
     public List<Curriculum> getCurriculums(){
         return curriculumService.getCurriculums();
     }
@@ -30,7 +30,7 @@ public class CurriculumController {
         curriculumService.addCurriculum(curriculum);
     }
 
-    @GetMapping
+    @GetMapping("/curriculumsByYear") //view the curriculum
     public Curriculum getCurriculumByYearOfStudy(YearOfStudy yearOfStudy){
         return curriculumService.getCurriculumByYearOfStudy(yearOfStudy);
     }

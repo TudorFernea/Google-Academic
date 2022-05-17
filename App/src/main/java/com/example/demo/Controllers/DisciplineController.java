@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController("DisciplineController")
-@RequestMapping(path="api/discipline")
+@RequestMapping(value="api/discipline")
 public class DisciplineController {
 
     private final DisciplineService disciplineService;
@@ -26,12 +26,12 @@ public class DisciplineController {
         return disciplineService.getDisciplines();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public void addDiscipline(@RequestBody Discipline discipline) {
         disciplineService.addDiscipline(discipline);
     }
 
-    @PostMapping
+    @PostMapping("/optionals")
     public List<Discipline> getOptionalsByStudent(@RequestBody Student student){
         List<Discipline> list1 = disciplineService.getDisciplinesByCurriculum(student.getYearOfStudy1().getCurriculum());// validari, daca nu e yearofstudy?
         List<Discipline> list2 = disciplineService.getDisciplinesByCurriculum(student.getYearOfStudy2().getCurriculum());

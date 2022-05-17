@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.time.Year;
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController("StudentController")
-@RequestMapping(path="api/v1/student")
+@RequestMapping(value="api/v1/student")
 public class StudentController {
 
     private final StudentService studentService;
@@ -27,16 +27,13 @@ public class StudentController {
         return studentService.getStudents();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
     }
 
-    @PostMapping
+    @PostMapping("/enroll")
     public String enrollStudent(@RequestBody Student student, YearOfStudy yearOfStudy){
-        //Optional<Student> result_student = studentService.findStudent(student);
-        //Optional<YearOfStudy> result_year = ??
-        //Student student1 = result_student.get();
 
         if(student.getYearOfStudy1() == null)
         {

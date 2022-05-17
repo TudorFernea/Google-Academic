@@ -16,8 +16,8 @@ import java.util.Collections;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Entity
-@Table
+@Entity(name="Users")
+@Table(name="Users")
 public class User implements UserDetails {
 
     @Id
@@ -30,26 +30,18 @@ public class User implements UserDetails {
             strategy = GenerationType.SEQUENCE,
             generator = "user_sequence"
     )
-
     private Integer id;
     private String username;
     private String password;
     private String email;
+    @Column(name="first_name")
     private String firstName;
+    @Column(name="lase_name")
     private String lastName;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
     private Boolean locked = false;
     private Boolean enabled = true;
-
-    public User(Integer id, String username, String password, String email, String firstName, String lastName) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 
     public User(String username, String password, String email, String firstName, String lastName) {
         this.username = username;

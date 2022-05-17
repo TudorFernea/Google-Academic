@@ -6,7 +6,7 @@ import { catchError, Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class SignUpService {
-  private logInUrl: string="https://localhost:8080/api/Registration"; //????
+  private logInUrl: string="http://localhost:8080/api/Registration"; //????
 
   constructor( private http: HttpClient,) { }
   signUp(name: string,surname: string,username: string, email:string, password: string, confirmPassword: string): Observable<boolean>{
