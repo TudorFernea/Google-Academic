@@ -30,8 +30,8 @@ public class CurriculumController {
         curriculumService.addCurriculum(curriculum);
     }
 
-    @GetMapping("/curriculumsByYear") //view the curriculum
+    /*@GetMapping("/curriculumsByYear") //view the curriculum
     public Curriculum getCurriculumByYearOfStudy(YearOfStudy yearOfStudy){
         return curriculumService.getCurriculumByYearOfStudy(yearOfStudy);
-    }
+    }*/
 }

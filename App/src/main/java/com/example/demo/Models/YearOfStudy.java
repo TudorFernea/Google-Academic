@@ -1,11 +1,16 @@
 package com.example.demo.Models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "YearOfStudy")
 @Table(name = "year_of_study")
+@Getter
+@Setter
 public class YearOfStudy {
 
     public YearOfStudy() {
@@ -44,9 +49,16 @@ public class YearOfStudy {
     )
     private List<Student> student2List =  new ArrayList<>();
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "curriculum")
-    private Curriculum curriculum;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "specializationId")
+    private Specialization specialization;
+
+    @OneToMany(
+            mappedBy = "yearOfStudy",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Discipline> disciplineList = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -71,12 +83,5 @@ public class YearOfStudy {
     }
     public void setStudent2List(List<Student> student2List) {
         this.student2List = student2List;
-    }
-
-    public Curriculum getCurriculum() {
-        return curriculum;
-    }
-    public void setCurriculum(Curriculum curriculum) {
-        this.curriculum = curriculum;
     }
 }

@@ -1,13 +1,19 @@
 package com.example.demo.Services;
 
-import com.example.demo.Models.Curriculum;
-import com.example.demo.Models.Discipline;
-import com.example.demo.Models.Student;
+import com.example.demo.Models.*;
 import com.example.demo.Repositories.DisciplineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 @Service("DisciplineService")
 public class DisciplineService {
@@ -22,8 +28,9 @@ public class DisciplineService {
     public List<Discipline> getDisciplines(){
         return disciplineRepository.findAll();
     }
-
-
+    public List<Discipline> getOptionals(){
+        return disciplineRepository.findAll().stream().filter(Discipline::getOptional).collect(Collectors.toList());
+    }
     public void addDiscipline(Discipline discipline) {
         disciplineRepository.save(discipline);
     }
@@ -31,4 +38,26 @@ public class DisciplineService {
     public List<Discipline> getDisciplinesByCurriculum(Curriculum curriculum) {
         return disciplineRepository.findDisciplineByCurriculum(curriculum);
     }
+
+    public Double getAverageGrade(Discipline discipline){
+        return discipline.getGradeList().stream().mapToInt(Grade::getValue).average().orElseThrow();
+    }
+
+    public Discipline getDisciplineWithBestResults(){
+
+        Map.Entry<Discipline, Double> result = disciplineRepository.findAll().stream()
+                .collect(Collectors.toMap(discipline -> discipline, discipline -> getAverageGrade(discipline))).entrySet().stream().max(comparingByValue()).orElseThrow();
+        return result.getKey();
+    }
+
+    public List<Discipline> getDisciplineByTeacher(Teacher teacher)
+    {
+        return disciplineRepository.findDisciplineByTeacher(teacher);
+    }
+
+    public List<Discipline> getDisciplineByYearOfStudyAndTeacher(YearOfStudy yearOfStudy ,Teacher teacher)
+    {
+        return disciplineRepository.findDisciplineByYearOfStudyAndTeacher(yearOfStudy, teacher);
+    }
+
 }

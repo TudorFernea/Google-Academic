@@ -1,6 +1,6 @@
 package com.example.demo.Registration;
 
-import com.example.demo.User.User;
+import com.example.demo.Models.User;
 import lombok.AllArgsConstructor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

@@ -19,14 +19,8 @@ public class Curriculum {
     )
     private Integer id;
 
-    @OneToMany(
-            mappedBy = "curriculum",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<Discipline> disciplineList =  new ArrayList<>();
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private YearOfStudy yearOfStudy;
+    @OneToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "disciplineId")
+    private Discipline discipline;
 
 }

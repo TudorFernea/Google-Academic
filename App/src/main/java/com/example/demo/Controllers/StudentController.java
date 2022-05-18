@@ -51,5 +51,11 @@ public class StudentController {
 
         return "200";
     }
+
+    @PostMapping("/studentsByDiscipline")
+    public List<Student> getStudentsByDiscipline(@RequestBody Discipline discipline)
+    {
+        return studentService.getStudentsByDiscipline(discipline);
+    }
 }
 

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository("CurriculumRepository")
 public interface CurriculumRepository extends JpaRepository<Curriculum, Integer> {
-
-    public Curriculum findCurriculumByYearOfStudy(YearOfStudy yearOfStudy);
+    //public Curriculum findCurriculumByYearOfStudy(YearOfStudy yearOfStudy);
 
 }

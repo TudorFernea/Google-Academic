@@ -36,6 +36,10 @@ public class Discipline {
     private String name;
     private Boolean optional;
 
+    private Integer maxNoOfStudents;
+
+    private Integer noOfCredits;
+
     @OneToMany(
             mappedBy = "discipline",
             cascade = CascadeType.ALL,
@@ -43,9 +47,24 @@ public class Discipline {
     )
     private List<Choice> choiceList = new ArrayList<>();
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "curriculum")
+    @OneToMany(
+            mappedBy = "discipline",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Grade> gradeList = new ArrayList<>();
+
+    @OneToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "curriculumId")
     private Curriculum curriculum;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "teacherId")
+    private Teacher teacher;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "yearOfStudyId")
+    private YearOfStudy yearOfStudy;
 
     public Curriculum getCurriculum() {
         return curriculum;
@@ -73,6 +92,22 @@ public class Discipline {
         this.optional = optional;
     }
 
+    public Integer getMaxNoOfStudents() {
+        return maxNoOfStudents;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public void setMaxNoOfStudents(Integer maxNoOfStudents) {
+        this.maxNoOfStudents = maxNoOfStudents;
+    }
+
     public List<Choice> getChoiceList() {
         return choiceList;
     }
@@ -81,4 +116,19 @@ public class Discipline {
         this.choiceList = choiceList;
     }
 
+    public List<Grade> getGradeList() {
+        return gradeList;
+    }
+
+    public void setGradeList(List<Grade> gradeList) {
+        this.gradeList = gradeList;
+    }
+
+    public Integer getNoOfCredits() {
+        return noOfCredits;
+    }
+
+    public void setNoOfCredits(Integer noOfCredits) {
+        this.noOfCredits = noOfCredits;
+    }
 }

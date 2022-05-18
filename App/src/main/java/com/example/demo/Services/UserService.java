@@ -46,7 +46,6 @@ public class UserService implements UserDetailsService {
         return "signup_form";
     }
 
-    //@PostMapping("/process_register")
     public String signUpUser(User user){
         boolean userExists = userRepository.findByUsername(user.getUsername()).isPresent();
 
