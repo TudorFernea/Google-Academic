@@ -29,4 +29,10 @@ public class GradeController {
     public void addGrade(@RequestBody Grade grade) {
         gradeService.addGrade(grade);
     }
+
+    @GetMapping(value="/professionalresults")
+    public void getProfessionalResults() {
+        gradeService.getProfessionalResults();
+        System.out.println("Service function was called");
+    }
 }
