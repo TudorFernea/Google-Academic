@@ -12,7 +12,7 @@ public class Choice {
     public Choice(Student student, Discipline discipline, Integer order) {
         this.student = student;
         this.discipline = discipline;
-        this.order = order;
+        this.choiceOrder = order;
     }
 
     @Id
@@ -35,7 +35,7 @@ public class Choice {
     @JoinColumn(name = "disciplineID")
     private Discipline discipline;
 
-    private Integer order;
+    private Integer choiceOrder;
 
 
     public Integer getId() {
@@ -43,7 +43,7 @@ public class Choice {
     }
 
     public Integer getOrder() {
-        return order;
+        return choiceOrder;
     }
 
     public Discipline getDiscipline() {
@@ -64,7 +64,7 @@ public class Choice {
     }
 
     public void setOrder(Integer order) {
-        this.order = order;
+        this.choiceOrder = order;
     }
 
 }

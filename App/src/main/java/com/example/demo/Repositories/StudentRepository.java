@@ -17,6 +17,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 //
 //    @Query("SELECT s from Student s where s.group  = :studentGroup group s.category order by :categoryName")
 //    Set<Student> getStudentsByGroupOrderedByGrade(@Param("group") String studentGroup, @Param("categoryName") String categoryName);
+    Student findStudentById(Integer ID);
 
 
 }

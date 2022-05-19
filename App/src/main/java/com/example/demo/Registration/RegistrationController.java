@@ -14,10 +14,13 @@ public class RegistrationController {
 
     private RegistrationService registrationService;
 
+    /*
     @PostMapping
     //     @PostMapping("/user/registration")
     public String register(@RequestBody RegistrationRequest request){
         // TODO: try catch for register method in the service
         return registrationService.register(request);
     }
+
+     */
 }

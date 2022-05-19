@@ -22,29 +22,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("api/v1/user")
+    @GetMapping
     public List<User> getUsers(){
         return userService.getUsers();
     }
 
-    // TODO: search for the username in the database and check if the password match
-    @RequestMapping("/login")
-    public boolean login(@RequestBody User user) {
-        try
-        {
-            var foundUser = userService.loadUserByUsername(user.getUsername());
-            return user.getPassword().equals(foundUser.getPassword());
-        }
-        catch (UsernameNotFoundException e) {
-            return false;
-        }
-    }
-
-    @RequestMapping("/user")
-    public Principal user(HttpServletRequest request) {
-        String authToken = request.getHeader("Authorization")
-                .substring("Basic".length()).trim();
-        return () ->  new String(Base64.getDecoder()
-                .decode(authToken)).split(":")[0];
-    }
 }

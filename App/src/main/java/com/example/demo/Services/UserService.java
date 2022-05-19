@@ -17,35 +17,20 @@ import java.util.List;
 
 @Service("UserService")
 @AllArgsConstructor
-public class UserService implements UserDetailsService {
+public class UserService{
 
     private final UserRepository userRepository;
     private final static String USER_NOT_FOUND_MSG = "user with username %s not found";
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public List<User> getUsers(){
         return userRepository.findAll();
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, username)));
+    public User addUser(User user){
+        return userRepository.save(user);
     }
 
-    // TODO: put in webController
-    @GetMapping("")
-    public String viewHomePage() {
-        return "index";
-    }
-
-    //nu stiu daca asta trebuie aici sau in controller sau altundeva
-    @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new User());
-
-        return "signup_form";
-    }
-
+    /*
     public String signUpUser(User user){
         boolean userExists = userRepository.findByUsername(user.getUsername()).isPresent();
 
@@ -68,5 +53,5 @@ public class UserService implements UserDetailsService {
         // TODO: SEND confirmation token
 
         return "register_success";
-    }
+    }*/
 }
