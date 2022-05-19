@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" afterDir="false" />
@@ -81,7 +82,8 @@
       </method>
     </configuration>
     <configuration name="AcademicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="demo" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="Google-Academic" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.AcademicApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,8 +107,8 @@
       <option name="presentableId" value="Default" />
       <updated>1650344675340</updated>
       <workItem from="1650344680966" duration="7159000" />
-      <workItem from="1651089983869" duration="640000" />
-      <workItem from="1651136984878" duration="3915000" />
+      <workItem from="1651247055750" duration="91000" />
+      <workItem from="1651255754537" duration="1410000" />
     </task>
     <servers />
   </component>

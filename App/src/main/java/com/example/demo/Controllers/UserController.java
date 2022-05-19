@@ -3,8 +3,12 @@ package com.example.demo.Controllers;
 import com.example.demo.Models.User;
 import com.example.demo.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
+import java.util.Base64;
 import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController("UserController")
@@ -18,8 +22,29 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("api/v1/user")
     public List<User> getUsers(){
         return userService.getUsers();
+    }
+
+    // TODO: search for the username in the database and check if the password match
+    @RequestMapping("/login")
+    public boolean login(@RequestBody User user) {
+        try
+        {
+            var foundUser = userService.loadUserByUsername(user.getUsername());
+            return user.getPassword().equals(foundUser.getPassword());
+        }
+        catch (UsernameNotFoundException e) {
+            return false;
+        }
+    }
+
+    @RequestMapping("/user")
+    public Principal user(HttpServletRequest request) {
+        String authToken = request.getHeader("Authorization")
+                .substring("Basic".length()).trim();
+        return () ->  new String(Base64.getDecoder()
+                .decode(authToken)).split(":")[0];
     }
 }

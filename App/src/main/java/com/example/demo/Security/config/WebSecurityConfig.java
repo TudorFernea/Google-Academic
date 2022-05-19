@@ -20,6 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    // TODO: change this part so it is connected with the frontend
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -29,7 +30,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
-                .formLogin();
+                .formLogin()
+                    .loginPage("/login.component.html")
+                    .failureUrl("/login-error.html")
+                    .permitAll()
+                .and()
+                .logout().logoutSuccessUrl("/").permitAll();
         http.headers()
                 .addHeaderWriter(
                         new StaticHeadersWriter("Access-Control-Allow-Origin", "http://localhost:4200")

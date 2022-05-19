@@ -23,9 +23,9 @@ public class CurriculumService {
         return curriculumRepository.findAll();
     }
 
-    public Curriculum getCurriculumByYearOfStudy(YearOfStudy yearOfStudy){
+    /*public Curriculum getCurriculumByYearOfStudy(YearOfStudy yearOfStudy){
         return curriculumRepository.findCurriculumByYearOfStudy(yearOfStudy);
-    }
+    }*/
 
     public void addCurriculum(Curriculum curriculum) {
         curriculumRepository.save(curriculum);
