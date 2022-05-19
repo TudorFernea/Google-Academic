@@ -43,6 +43,13 @@ public class Discipline {
     )
     private List<Choice> choiceList = new ArrayList<>();
 
+    @OneToMany(
+            mappedBy = "discipline",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Choice> gradeList = new ArrayList<>();
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "curriculum")
     private Curriculum curriculum;

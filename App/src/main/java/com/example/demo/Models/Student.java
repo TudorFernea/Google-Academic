@@ -35,6 +35,13 @@ public class Student extends User {
     )
     private List<Choice> choiceList =  new ArrayList<>();
 
+    @OneToMany(
+            mappedBy = "student",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Choice> gradeList =  new ArrayList<>();
+
     public Integer getId() {
         return id;
     }
