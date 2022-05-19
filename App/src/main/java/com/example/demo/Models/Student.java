@@ -13,10 +13,11 @@ public class Student extends User {
     public Student() {
     }
 
-    public Student(String username, String password, String email, String firstName, String lastName, YearOfStudy yearOfStudy1, YearOfStudy yearOfStudy2) {
+    public Student(String username, String password, String email, String firstName, String lastName, YearOfStudy yearOfStudy1, YearOfStudy yearOfStudy2, String group) {
         super(username, password, email, firstName, lastName);
         this.yearOfStudy1 = yearOfStudy1;
         this.yearOfStudy2 = yearOfStudy2;
+        this.group = group;
     }
 
 
@@ -27,6 +28,8 @@ public class Student extends User {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "year_of_study2")
     private YearOfStudy yearOfStudy2;
+
+    private String group;
 
     @OneToMany(
             mappedBy = "student",
@@ -54,6 +57,8 @@ public class Student extends User {
         return yearOfStudy2;
     }
 
+    public String getGroup() {return this.group;}
+
     public List<Choice> getChoiceList() {
         return choiceList;
     }
@@ -70,12 +75,15 @@ public class Student extends User {
         this.choiceList = choiceList;
     }
 
+    public void setGroup(String group) {this.group = group;}
+
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", yearOfStudy1=" + yearOfStudy1 +
                 ", yearOfStudy2=" + yearOfStudy2 +
+                ", group=" + group +
                 '}';
     }
 
