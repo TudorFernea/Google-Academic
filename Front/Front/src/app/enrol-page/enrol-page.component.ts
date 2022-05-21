@@ -1,105 +1,77 @@
 import { Component, OnInit } from '@angular/core';
-import { Curriculum, Disciplines } from '../models/curriculum'
+import { Curriculum, Disciplines, YearOfStudy } from '../models/curriculum'
 @Component({
   selector: 'app-enrol-page',
   templateUrl: './enrol-page.component.html',
   styleUrls: ['./enrol-page.component.css']
 })
 export class EnrolPageComponent implements OnInit {
+  disciplines: Disciplines[]=[
+    {
+      id: 0,
+      name: "asc",
+      optional: true,
+      credits: 7,
+      teacherName: "Emilia",
+      curriculum: [{id:0, text:"facem "}]
+    },
+    {
+      id: 1,
+      name: "asc2",
+      optional: false,
+      credits: 7,
+      teacherName: "Emilia2",
+      curriculum: [{id:1, text:"facem2 "}]
+    },
+    {
+      id: 2,
+      name: "asc3",
+      optional: false,
+      credits: 7,
+      teacherName: "Emilia3",
+      curriculum: [{id:2, text:"facem3 "}]
+    },
+    {
+      id: 3,
+      name: "asc3",
+      optional: false,
+      credits: 7,
+      teacherName: "Emilia3",
+      curriculum: [{id:3, text:"facem3 "}]
+    },
+    {
+      id: 4,
+      name: "asc4",
+      optional: true,
+      credits: 2,
+      teacherName: "Emilia4",
+      curriculum: [{id:4, text:"facem4 "}]
+    }
 
-  curriculums: Curriculum[] = [{
-    id: 0,
-    disciplines: [
-      {
-        id: 0,
-        name: "asc",
-        optional: false
-      },
-      {
-        id: 1,
-        name: "os",
-        optional: true
-      },
-      {
-        id: 2,
-        name: "bd",
-        optional: false
-      },
-      {
-        id: 0,
-        name: "asc",
-        optional: false
-      },
-      {
-        id: 1,
-        name: "os",
-        optional: true
-      },
-      {
-        id: 2,
-        name: "bd",
-        optional: false
-      },
-      {
-        id: 0,
-        name: "asc",
-        optional: false
-      },
-      {
-        id: 1,
-        name: "os",
-        optional: true
-      },
-      {
-        id: 2,
-        name: "bd",
-        optional: false
-      }
-    ],
-    yearOfStudy: 3
-  },
-  {
-    id: 1,
-    disciplines: [
-      {
-        id: 0,
-        name: "ssc",
-        optional: true
-      },
-      {
-        id: 1,
-        name: "ss",
-        optional: false
-      },
-      {
-        id: 2,
-        name: "sd",
-        optional: true
-      }
-    ],
-    yearOfStudy: 2
-  },
-  {
-    id: 2,
-    disciplines: [
-      {
-        id: 0,
-        name: "sd",
-        optional: true
-      },
-      {
-        id: 1,
-        name: "aaa",
-        optional: false
-      },
-      {
-        id: 2,
-        name: "aa",
-        optional: true
-      }
-    ],
-    yearOfStudy: 2
-  }];;
+  ];
+  yearOfStudy: YearOfStudy[]=[
+    {
+      id: 1,
+      year:1,
+      specializationName:" mate info 1"
+    },
+    {
+      id: 2,
+      year:2,
+      specializationName:" mate info 2"
+    },
+    {
+      id: 3,
+      year:3,
+      specializationName:" mate info 3"
+    },
+    {
+      id: 3,
+      year:3,
+      specializationName:" mate info 3"
+    }
+  ];
+  
   currentId: number = 0;
   constructor() { }
 

@@ -11,7 +11,7 @@
     <br>
     <div class=" chenarButoane " style="padding-bottom: 0%;">
 
-        <div> Curriculum: {{curriculums[currentId].id}} Year of study: {{curriculums[currentId].yearOfStudy}}</div>
+        <div>  Year of study: {{yearOfStudy[currentId].year}}</div>
     </div>
 
     <br>
@@ -23,14 +23,20 @@
                     <tr style="position: sticky; top:0; background-color: white;">
                         <th>Discipline</th>
                         <th>Optional</th>
-
+                        <th>Credits</th>
+                        <th>Teacher Name</th>
+                        
                     </tr>
 
                     <tbody id="disciplinesAndOptinals">
 
-                        <tr *ngFor="let discipline of curriculums[currentId].disciplines">
+                        <tr *ngFor="let discipline of disciplines">
                             <td> {{discipline.name}}</td>
                             <td> {{discipline.optional}}</td>
+                            <td> {{discipline.credits}}</td>
+                            <td> {{discipline.teacherName}}</td>
+                           
+
                         </tr>
                     </tbody>
 
@@ -47,10 +53,10 @@
             <button (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">Previous</button>
             &nbsp;
             <button (click)="nextCurriculum()" id="nextButton"
-                [disabled]="currentId===curriculums.length-1">Next</button>
+                [disabled]="currentId===yearOfStudy.length-1">Next</button>
         </div>
 
 
-    </div>
+    </div> 
 
 </div>

@@ -82,8 +82,8 @@ export class LoginComponent {
   }
 
   public getRadioValue(){
-    if (this.positionForm.value==='student') {console.log('student'); return 'student';}
-    else if  (this.positionForm.value==='teacher') {console.log('teacher'); return 'teacher';}
+    if (this.positionForm.value==='student') {console.log('student'); return 'STUDENT';}
+    else if  (this.positionForm.value==='teacher') {console.log('teacher'); return 'TEACHER';}
     else return 'nothing good';
   }
 
@@ -96,7 +96,8 @@ export class LoginComponent {
       this.signUpForm.controls["username"].value,
       this.signUpForm.controls["email"].value,
        this.loginForm.controls["password"].value,
-       this.signUpForm.controls["confirmPassword"].value
+       this.signUpForm.controls["confirmPassword"].value,
+       this.getRadioValue()
        ).subscribe(
         response => {
           
@@ -108,9 +109,6 @@ export class LoginComponent {
         }
        )
       }
-  
-      
-  
 
   validateString(input: String){
     if (input==="") alert("Provide an input!")

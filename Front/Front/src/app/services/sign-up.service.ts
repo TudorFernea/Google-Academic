@@ -9,7 +9,7 @@ export class SignUpService {
   private logInUrl: string="http://localhost:8080/api/Registration"; //????
 
   constructor( private http: HttpClient,) { }
-  signUp(name: string,surname: string,username: string, email:string, password: string, confirmPassword: string): Observable<boolean>{
+  signUp(name: string,surname: string,username: string, email:string, password: string, confirmPassword: string, role: string): Observable<boolean>{
     return this.http.post<boolean>(`${this.logInUrl}`, {name, surname,username,email,password,confirmPassword}).pipe(
       catchError(_ => {alert("Error"); return of(false);})
   

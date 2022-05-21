@@ -11,23 +11,22 @@
 <div class="Chenar">
     <h4 class=" title2 "> Optional disciplines: </h4>
     <br>
-    <!-- <div class=" chenarButoane " style="padding-bottom: 0%;">
+    <div class=" chenarButoane " style="padding-bottom: 0%;">
 
-        <div> Curriculum: {{curriculums[currentId].id}} Year of study: {{curriculums[currentId].yearOfStudy}}</div>
-    </div> -->
+        <div>  Year of study: {{yearOfStudy[currentId].year}} Specialization {{yearOfStudy[currentId].specializationName}}</div>
+    </div>
 
     <br>
 
     
-
-        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let discipline of disciplines" cdkDrag>{{discipline.name}}
+         <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}}
                 
             </div>
           </div>
         
         <br>
-        <br>
+        <br> 
         
 
 

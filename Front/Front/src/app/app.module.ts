@@ -16,6 +16,7 @@ import { SeeOptionalDisciplinesComponent } from './see-optional-disciplines/see-
 import { ViewGradesComponent } from './view-grades/view-grades.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthService } from './Servicies/auth.service';
+import { ChooseYearOfStudy2Component } from './choose-year-of-study2/choose-year-of-study2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { AuthService } from './Servicies/auth.service';
     ViewCurriculumComponent,
     ChooseYearOfStudyComponent,
     SeeOptionalDisciplinesComponent,
-    ViewGradesComponent
+    ViewGradesComponent,
+    ChooseYearOfStudy2Component
   ],
   imports: [
     BrowserModule,
