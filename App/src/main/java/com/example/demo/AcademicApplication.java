@@ -32,9 +32,9 @@ public class AcademicApplication {
 			//User user =  new User("user1","1234","test@gmail.com","ion","pop");
 			//userService.addUser(user);
 
-			Student student = new Student("user1","1234","test@gmail.com","ion","pop", "923");
-			studentService.addStudent(student);
-			securityService.addUser(student);
+			//Student student = new Student("user1","1234","test@gmail.com","ion","pop", "923");
+			//studentService.addStudent(student);
+			//securityService.addUser(student);
 
 			/*
 			AcademicUser academicUser2 = new AcademicUser(null,"test.teacher","test","test.teacher@gmail.com","Test Teacher","5030303030303");

@@ -16,4 +16,7 @@ public class RegistrationRequest {
     private final String password;
     private final String confirmationPassword;
     private final String email;
+    private final String role;
+    //private final String groupName;
+    //private final String faculty;
 }

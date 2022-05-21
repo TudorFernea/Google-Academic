@@ -1,6 +1,7 @@
 package com.example.demo.Registration;
 
 import com.example.demo.Models.User;
+import com.example.demo.Services.SecurityService;
 import lombok.AllArgsConstructor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,15 +13,13 @@ import org.springframework.web.context.request.WebRequest;
 @AllArgsConstructor
 public class RegistrationController {
 
-    private RegistrationService registrationService;
+    private SecurityService securityService;
 
-    /*
     @PostMapping
-    //     @PostMapping("/user/registration")
-    public String register(@RequestBody RegistrationRequest request){
+    public boolean register(@RequestBody RegistrationRequest request){
         // TODO: try catch for register method in the service
-        return registrationService.register(request);
+        return securityService.register(request);
     }
 
-     */
+
 }

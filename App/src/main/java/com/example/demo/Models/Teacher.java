@@ -17,7 +17,11 @@ import java.util.List;
 @Table(name="teacher")
 @PrimaryKeyJoinColumn(name = "id")
 public class Teacher extends User{
-    private String name;
+
+    public Teacher(String username, String password, String email, String firstName, String lastName, boolean isChief) {
+        super(username, password, email, firstName, lastName);
+        this.isChief = isChief;
+    }
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "facultyId")

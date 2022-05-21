@@ -15,7 +15,7 @@ export class LoginComponent {
   loginForm = new FormGroup({
     email : new FormControl(''),
     password : new FormControl(''),
-  })
+  });
 
   signUpForm= new FormGroup({
     name: new FormControl(''),
@@ -82,8 +82,8 @@ export class LoginComponent {
   }
 
   public getRadioValue(){
-    if (this.positionForm.controls["position"].value==='student') {console.log('student'); return 'STUDENT';}
-    else if  (this.positionForm.controls["position"].value==='teacher') {console.log('teacher'); return 'TEACHER';}
+    if (this.positionForm.value==='student') {console.log('student'); return 'student';}
+    else if  (this.positionForm.value==='teacher') {console.log('teacher'); return 'teacher';}
     else return 'nothing good';
   }
 
@@ -95,16 +95,14 @@ export class LoginComponent {
       this.signUpForm.controls["surname"].value,
       this.signUpForm.controls["username"].value,
       this.signUpForm.controls["email"].value,
-       this.signUpForm.controls["password"].value,
-       this.signUpForm.controls["confirmPassword"].value,
-       this.getRadioValue()
+       this.loginForm.controls["password"].value,
+       this.signUpForm.controls["confirmPassword"].value
        ).subscribe(
         response => {
           
           console.log(response);
           if(response){
-            alert("Registered succesfully");
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('login');
            
           } 
         }
