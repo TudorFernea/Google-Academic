@@ -110,9 +110,6 @@ export class LoginComponent {
         }
        )
       }
-  
-      
-  
 
   validateString(input: String){
     if (input==="") alert("Provide an input!")

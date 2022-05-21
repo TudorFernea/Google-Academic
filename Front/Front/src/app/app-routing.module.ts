@@ -8,6 +8,7 @@ import { SeeOptionalDisciplinesComponent } from './see-optional-disciplines/see-
 import { StudentPageComponentComponent } from './student-page/student-page-component.component';
 import { ViewCurriculumComponent } from './view-curriculum/view-curriculum.component';
 import { ViewGradesComponent } from './view-grades/view-grades.component';
+import {ChooseYearOfStudy2Component} from './choose-year-of-study2/choose-year-of-study2.component'
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'viewCurriculumPage', component: ViewCurriculumComponent},
   {path: 'chooseYearOfStudyPage', component: ChooseYearOfStudyComponent},
   {path: 'seeOptionalDisciplinesPage', component: SeeOptionalDisciplinesComponent},
-  {path: 'viewGradesPage', component: ViewGradesComponent}
+  {path: 'viewGradesPage', component: ViewGradesComponent},
+  {path: 'chooseYearOfStudy2', component: ChooseYearOfStudy2Component}
 
 ];
 

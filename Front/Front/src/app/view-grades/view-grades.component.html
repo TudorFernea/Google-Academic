@@ -1,1 +1,51 @@
-<p>view-grades works!</p>
+<div class="Bara">
+    <!-- <div class="navBarLogo">
+        <img src="/assets/t2.png"  class="navBarPic">;
+    </div> -->
+    <!-- <i class="fa-solid fa-screen-users"></i> -->
+
+</div>
+
+<div class="Chenar">
+    <h4 class=" title2 "> Your grades: </h4>
+    <br>
+    <div class=" chenarButoane " style="padding-bottom: 0%;">
+
+      
+    </div>
+
+    <br>
+
+    <div>
+        <div style="position: relative">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;">
+                        <th>Discipline</th>
+                        <th>Grade</th>
+                        
+                    </tr>
+
+                    <tbody id="disciplinesAndGrades">
+
+                        <tr *ngFor="let discipline of gradesForStudent">
+
+                            <td> {{discipline.disciplineName}}</td>
+                            <td> {{discipline.disciplineGrade}}</td>
+                           
+
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        
+
+    </div> 
+
+</div>
+

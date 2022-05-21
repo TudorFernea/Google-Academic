@@ -1,9 +1,7 @@
 
 
  <div class="Bara">
-    <!-- <div class="navBarLogo">
-        <img src="/assets/t2.png"  class="navBarPic">;
-    </div> --> -->
+   
      <i class="fa-solid fa-screen-users"></i>
 
 </div> 
@@ -11,10 +9,10 @@
 <div class="Chenar">
     <h4 class=" title2 "> Mandatory disciplines: </h4>
     <br>
-    <!-- <div class=" chenarButoane " style="padding-bottom: 0%;">
+     <div class=" chenarButoane " style="padding-bottom: 0%;">
 
-        <div> Curriculum: {{curriculums[currentId].id}} Year of study: {{curriculums[currentId].yearOfStudy}}</div>
-    </div> -->
+        <div> Year of study: {{yearOfStudy[currentId].year}} Specialization {{yearOfStudy[currentId].specializationName}}</div>
+    </div>
 
     <br>
 
@@ -24,15 +22,17 @@
                 <table>
                     <tr style="position: sticky; top:0; background-color: white;">
                         <th>Discipline</th>
-                        <!-- <th>Optional</th> -->
+                        <th>Curriculum</th>
+                        
 
                     </tr>
 
                     <tbody id="disciplinesAndOptinals">
 
-                        <tr *ngFor="let discipline of disciplines">
+                        <tr *ngFor="let discipline of mandatoryDiscipline">
                             <td> {{discipline.name}}</td>
-                            <!-- <td> {{discipline.optional}}</td> -->
+                            <td> {{discipline.curriculum[0].text}}</td>
+                           
                         </tr>
                     </tbody>
 
@@ -49,4 +49,4 @@
 
     </div>
 
-</div> 
+</div>  
