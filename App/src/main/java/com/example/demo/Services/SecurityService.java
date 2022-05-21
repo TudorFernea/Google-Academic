@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@org.springframework.stereotype.Service
+@org.springframework.stereotype.Service("SecurityService")
 public class SecurityService implements UserDetailsService {
 
     @Autowired
@@ -30,6 +30,13 @@ public class SecurityService implements UserDetailsService {
     private AdminRepository adminRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    public User addUser(User user){
+        user.setPassword(
+                passwordEncoder.encode(user.getPassword())
+        );
+        return userRepository.save(user);
+    }
 
     public List<String> getRoles(String username) {
         List<String> result = new ArrayList<>();
