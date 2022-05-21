@@ -1,0 +1,56 @@
+<div class="Bara">
+    <!-- <div class="navBarLogo">
+        <img src="/assets/t2.png"  class="navBarPic">;
+    </div> -->
+    <!-- <i class="fa-solid fa-screen-users"></i> -->
+
+</div>
+
+<div class="Chenar">
+    <h4 class=" title2 "> Enrol to a year (or at most 2 years) of study </h4>
+    <br>
+    <div class=" chenarButoane " style="padding-bottom: 0%;">
+
+        <div> Curriculum: {{curriculums[currentId].id}} Year of study: {{curriculums[currentId].yearOfStudy}}</div>
+    </div>
+
+    <br>
+
+    <div>
+        <div style="position: relative">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;">
+                        <th>Discipline</th>
+                        <th>Optional</th>
+
+                    </tr>
+
+                    <tbody id="disciplinesAndOptinals">
+
+                        <tr *ngFor="let discipline of curriculums[currentId].disciplines">
+                            <td> {{discipline.name}}</td>
+                            <td> {{discipline.optional}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center">
+            <button (click)="enrol()">Enrol</button>
+        </div>
+        <br>
+        <div style="text-align: center">
+            <button (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">Previous</button>
+            &nbsp;
+            <button (click)="nextCurriculum()" id="nextButton"
+                [disabled]="currentId===curriculums.length-1">Next</button>
+        </div>
+
+
+    </div>
+
+</div>

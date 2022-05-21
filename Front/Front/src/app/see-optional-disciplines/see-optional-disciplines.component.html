@@ -1,0 +1,35 @@
+
+
+ <div class="Bara">
+    <!-- <div class="navBarLogo">
+        <img src="/assets/t2.png"  class="navBarPic">;
+    </div> --> -->
+     <i class="fa-solid fa-screen-users"></i>
+
+</div> 
+
+<div class="Chenar">
+    <h4 class=" title2 "> Optional disciplines: </h4>
+    <br>
+    <!-- <div class=" chenarButoane " style="padding-bottom: 0%;">
+
+        <div> Curriculum: {{curriculums[currentId].id}} Year of study: {{curriculums[currentId].yearOfStudy}}</div>
+    </div> -->
+
+    <br>
+
+    
+
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let discipline of disciplines" cdkDrag>{{discipline.name}}
+                
+            </div>
+          </div>
+        
+        <br>
+        <br>
+        
+
+
+    </div>
+

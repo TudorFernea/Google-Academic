@@ -1,0 +1,52 @@
+
+
+ <div class="Bara">
+    <!-- <div class="navBarLogo">
+        <img src="/assets/t2.png"  class="navBarPic">;
+    </div> --> -->
+     <i class="fa-solid fa-screen-users"></i>
+
+</div> 
+
+<div class="Chenar">
+    <h4 class=" title2 "> Mandatory disciplines: </h4>
+    <br>
+    <!-- <div class=" chenarButoane " style="padding-bottom: 0%;">
+
+        <div> Curriculum: {{curriculums[currentId].id}} Year of study: {{curriculums[currentId].yearOfStudy}}</div>
+    </div> -->
+
+    <br>
+
+    <div>
+        <div style="position: relative">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;">
+                        <th>Discipline</th>
+                        <!-- <th>Optional</th> -->
+
+                    </tr>
+
+                    <tbody id="disciplinesAndOptinals">
+
+                        <tr *ngFor="let discipline of disciplines">
+                            <td> {{discipline.name}}</td>
+                            <!-- <td> {{discipline.optional}}</td> -->
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <button routerLink="/seeOptionalDisciplinesPage">See optional disciplines</button>
+        </div>
+        <br>
+        <br>
+        
+
+
+    </div>
+
+</div> 
