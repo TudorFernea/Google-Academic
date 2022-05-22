@@ -31,9 +31,11 @@ const routes: Routes = [
   {path: 'teacherPage', component: TeacherPageComponent},
   {path: 'addDiscipline', component: AddDisciplineComponent},
   {path: 'addGrade', component: AddGradeComponent},
-  {path: 'assignGradeToStudent', component: AssignGradeToStudentComponent},
   {path: 'chiefTeacherPage', component: ChiefTeacherPageComponent},
   {path: 'viewAndAprove', component: ViewAndApproveComponent}
+
+  {path: 'assignGradeToStudent/:id', component: AssignGradeToStudentComponent}
+
 
 ];
 

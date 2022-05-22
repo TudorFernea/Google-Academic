@@ -8,7 +8,7 @@
     <div>
          <select id="discipline" (change)="changeDiscipline($event)">
             <option value="0" disabled selected>Select your option</option>
-            <option *ngFor="let name of nameOfDisciplines" value="{{name}}">{{name}}</option>
+            <option *ngFor="let discipline of disciplines" value="{{discipline.id}}">{{discipline.name}}</option>
         </select>
        
        
@@ -16,7 +16,7 @@
     </div>
     
     <div class="parinteleButonului">
-        <button type="submit" style="cursor: pointer"  class="btn-grad" routerLink="/assignGradeToStudent">
+        <button type="submit" style="cursor: pointer"  class="btn-grad" (click)="goToAssignGrade()">
            see students 
         </button>
     </div>

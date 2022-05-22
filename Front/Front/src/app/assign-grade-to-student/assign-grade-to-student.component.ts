@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Params } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { Disciplines, Student, YearOfStudy } from '../models/curriculum';
+import { TeacherService } from '../services/teacher.service';
+import { AuthService } from '../Servicies/auth.service';
 
 @Component({
   selector: 'app-assign-grade-to-student',
@@ -8,49 +12,9 @@ import { Disciplines, Student, YearOfStudy } from '../models/curriculum';
   styleUrls: ['./assign-grade-to-student.component.css']
 })
 export class AssignGradeToStudentComponent implements OnInit {
-  disciplines: Disciplines[]=[
-    {
-      id: 0,
-      name: "asc",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: [{id:0, text:"facem "}]
-    },
-    {
-      id: 1,
-      name: "asc2",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia2",
-      curriculum: [{id:1, text:"facem2 "}]
-    },
-    {
-      id: 2,
-      name: "asc3",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: [{id:2, text:"facem3 "}]
-    },
-    {
-      id: 3,
-      name: "asc3",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: [{id:3, text:"facem3 "}]
-    },
-    {
-      id: 4,
-      name: "asc4",
-      optional: true,
-      credits: 2,
-      teacherName: "Emilia4",
-      curriculum: [{id:4, text:"facem4 "}]
-    }
 
-  ];
+  disciplineName: string="";
+  disciplines: Disciplines[]=[];
   yearOfStudy: YearOfStudy[]=[
     {
       id: 1,
@@ -73,31 +37,20 @@ export class AssignGradeToStudentComponent implements OnInit {
       specializationName:" mate info 3"
     }
   ];
-  students: Student[]=[
-    {id:1,
-    nume:"Farcas",
-    prenume:"Iulia"},
-    {id:2,
-      nume:"Farcas",
-      prenume:"yu"},
-      {id:3,
-        nume:"Dalia",
-        prenume:"Sharra"},
-        {id:4,
-          nume:"Fernea",
-          prenume:"Sharra"},
-
-
-  ];
+  students: Student[]=[];
   insertGradeForm= new FormGroup({
     grade: new FormControl(''),
-
-
   })
   currentId: number = 0;
-  constructor() { }
+  constructor(private teacherService: TeacherService,private authService:AuthService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    //document.getElementById("grade")?.innerHTML;
+    this.route.params.pipe(
+      switchMap(
+        (params:Params)=>this.teacherService.getAllStudentByDiscipline(+params['id'])
+      )
+    ).subscribe(student=>this.students=student)
   }
 
 }

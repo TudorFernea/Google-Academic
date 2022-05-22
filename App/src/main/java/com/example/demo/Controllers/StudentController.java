@@ -1,14 +1,19 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.DTOs.CurriculumDTO;
+import com.example.demo.DTOs.DisciplineDTO;
+import com.example.demo.DTOs.StudentDTO;
 import com.example.demo.DTOs.YearOfStudyDTO;
 import com.example.demo.Models.Discipline;
 import com.example.demo.Models.Student;
 import com.example.demo.Models.YearOfStudy;
+import com.example.demo.Services.DisciplineService;
 import com.example.demo.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -19,10 +24,12 @@ import java.util.stream.Collectors;
 public class StudentController {
 
     private final StudentService studentService;
+    private final DisciplineService disciplineService;
 
     @Autowired
-    public StudentController(StudentService studentService) {
+    public StudentController(StudentService studentService, DisciplineService disciplineService) {
         this.studentService = studentService;
+        this.disciplineService = disciplineService;
     }
 
     @GetMapping
@@ -62,7 +69,17 @@ public class StudentController {
 
         Student student = studentService.findByUsername(username);
 
-        return List.of(student.getYearOfStudy1(),student.getYearOfStudy2())
+        YearOfStudy yearOfStudy1 = student.getYearOfStudy1();
+        YearOfStudy yearOfStudy2 = student.getYearOfStudy2();
+
+        List<YearOfStudy> list = new ArrayList<YearOfStudy>();
+
+        if(yearOfStudy1 != null)
+            list.add(yearOfStudy1);
+        if(yearOfStudy2 != null)
+            list.add(yearOfStudy2);
+        
+        return list
                 .stream()
                 .map(year -> new YearOfStudyDTO(
                         year.getId(),
@@ -72,10 +89,18 @@ public class StudentController {
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/studentsByDiscipline")
-    public List<Student> getStudentsByDiscipline(@RequestBody Discipline discipline)
+    @PostMapping("/studentsByDiscipline/{disciplineId}")
+    public List<StudentDTO> getStudentsByDiscipline(@PathVariable Integer disciplineId)
     {
-        return studentService.getStudentsByDiscipline(discipline);
+        Discipline discipline = this.disciplineService.getDiscipline(disciplineId);
+        return studentService.getStudentsByDiscipline(discipline)
+                .stream()
+                .map(student -> new StudentDTO(
+                        student.getId(),
+                        student.getFirstName(),
+                        student.getLastName(),
+                        student.getGroupName()
+                )).collect(Collectors.toList());
     }
 }
 

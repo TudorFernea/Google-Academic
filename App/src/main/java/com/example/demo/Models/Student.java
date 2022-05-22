@@ -55,7 +55,7 @@ public class Student extends User {
         return yearOfStudy2;
     }
 
-    public String getGroups() {return this.groupName;}
+    public String getGroupName() {return this.groupName;}
 
     public List<Choice> getChoiceList() {
         return choiceList;

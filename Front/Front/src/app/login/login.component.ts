@@ -33,10 +33,10 @@ export class LoginComponent {
   })
 
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private registerService: RegisterService,
     private signUpService: SignUpService,
-    private authService: AuthService) { 
+    private authService: AuthService) {
   }
 
 
@@ -58,13 +58,21 @@ export class LoginComponent {
 
   public redirectStudent() {
     if(this.loginForm.controls["email"].value === "idk"){
+
       this.router.navigateByUrl('chiefTeacherPage');
+
     }
     else //if(this.validateEmail(this.loginForm.controls["email"].value)  && this.validatePassword(this.loginForm.controls["password"].value))
       this.authService.loginUser(this.loginForm.controls["email"].value, this.loginForm.controls["password"].value).subscribe(
-        ()=> 
+        ()=>
           {
-            this.router.navigateByUrl('studentPage');
+            const role = this.authService.getRoles();
+            if (role == "STUDENT")
+              this.router.navigateByUrl('studentPage');
+            else if(role == "TEACHER")
+              this.router.navigateByUrl('teacherPage');
+            else if(role == "CHIEF")
+              this.router.navigateByUrl('teacherPage');
           },
         ()=>
           {
@@ -82,7 +90,7 @@ export class LoginComponent {
 
   public signUpStudent(){
       // console.log(this.positionForm.controls["position"].value);
-      
+
       this.signUpService.signUp(
       this.signUpForm.controls["name"].value,
       this.signUpForm.controls["surname"].value,
@@ -93,13 +101,13 @@ export class LoginComponent {
        this.getRadioValue()
        ).subscribe(
         response => {
-          
+
           console.log(response);
           if(response){
             alert("Registered succesfully");
             this.router.navigateByUrl('/');
-           
-          } 
+
+          }
         }
        )
       }
@@ -111,5 +119,5 @@ export class LoginComponent {
     if(password!==confPassword) alert("Passwords should be the same");
 
   }
-  
+
 }
