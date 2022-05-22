@@ -58,21 +58,8 @@ export class ViewGradesComponent implements OnInit {
       year:1,
       specializationName:" mate info 1"
     },
-    {
-      id: 2,
-      year:2,
-      specializationName:" mate info 2"
-    },
-    {
-      id: 3,
-      year:3,
-      specializationName:" mate info 3"
-    },
-    {
-      id: 3,
-      year:3,
-      specializationName:" mate info 3"
-    }
+    
+
   ];
   grades: Grade[]=[
     {

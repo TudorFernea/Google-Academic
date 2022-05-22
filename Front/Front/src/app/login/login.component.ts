@@ -58,7 +58,7 @@ export class LoginComponent {
 
   public redirectStudent() {
     if(this.loginForm.controls["email"].value === "idk"){
-      this.router.navigateByUrl('teacherPage');
+      this.router.navigateByUrl('chiefTeacherPage');
     }
     else //if(this.validateEmail(this.loginForm.controls["email"].value)  && this.validatePassword(this.loginForm.controls["password"].value))
       this.authService.loginUser(this.loginForm.controls["email"].value, this.loginForm.controls["password"].value).subscribe(

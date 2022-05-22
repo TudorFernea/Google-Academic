@@ -7,7 +7,6 @@
 </div> 
 
 <div class="Chenar">
-    <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Mandatory disciplines </b></h4>
     <br>
     <div style="text-align: center" id="outer">
            
@@ -20,6 +19,8 @@
         </button>
         
     </div>
+    <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Mandatory disciplines </b></h4>
+
 
 
      <div class=" chenarButoane " style="padding-bottom: 0%;">
@@ -55,11 +56,16 @@
                 </table>
             </div>
         </div>
-        <div class="parinteleButonului">
-            <button class="btn-grad"  style="cursor: pointer; width: 230px" routerLink="/seeOptionalDisciplinesPage">
-                See optional disciplines
-            </button>
-        </div>
+        <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Optional disciplines </b></h4>
+<br>
+        <div style="position: relative; margin-left: 25px; margin-right: 25px;">
+        
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}}
+                    
+        </div> 
+</div>
+    
 
       
         <br>

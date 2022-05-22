@@ -22,6 +22,8 @@ import { AddDisciplineComponent } from './add-discipline/add-discipline.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddGradeComponent } from './add-grade/add-grade.component';
 import { AssignGradeToStudentComponent } from './assign-grade-to-student/assign-grade-to-student.component';
+import { ChiefTeacherPageComponent } from './chief-teacher-page/chief-teacher-page.component';
+import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { AssignGradeToStudentComponent } from './assign-grade-to-student/assign-
     TeacherPageComponent,
     AddDisciplineComponent,
     AddGradeComponent,
-    AssignGradeToStudentComponent
+    AssignGradeToStudentComponent,
+    ChiefTeacherPageComponent,
+    ViewAndApproveComponent
   ],
   imports: [
     BrowserModule,
