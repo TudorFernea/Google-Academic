@@ -5,12 +5,11 @@ export interface Disciplines{
     credits: number;
     teacherName: string;
     curriculum: Curriculum[];
-
 }
+
 export interface Curriculum {
     id: number;
     text: string;
-
 }
 export interface YearOfStudy{
     id: number;

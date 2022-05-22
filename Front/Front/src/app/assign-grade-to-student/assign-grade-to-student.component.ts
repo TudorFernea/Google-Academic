@@ -45,6 +45,7 @@ export class AssignGradeToStudentComponent implements OnInit {
   constructor(private teacherService: TeacherService,private authService:AuthService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    //document.getElementById("grade")?.innerHTML;
     this.route.params.pipe(
       switchMap(
         (params:Params)=>this.teacherService.getAllStudentByDiscipline(+params['id'])

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -68,7 +69,17 @@ public class StudentController {
 
         Student student = studentService.findByUsername(username);
 
-        return List.of(student.getYearOfStudy1(),student.getYearOfStudy2())
+        YearOfStudy yearOfStudy1 = student.getYearOfStudy1();
+        YearOfStudy yearOfStudy2 = student.getYearOfStudy2();
+
+        List<YearOfStudy> list = new ArrayList<YearOfStudy>();
+
+        if(yearOfStudy1 != null)
+            list.add(yearOfStudy1);
+        if(yearOfStudy2 != null)
+            list.add(yearOfStudy2);
+        
+        return list
                 .stream()
                 .map(year -> new YearOfStudyDTO(
                         year.getId(),

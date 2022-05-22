@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/StudentDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/DisciplineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/DisciplineRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/TeacherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/TeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,14 +136,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/StudentService.java</url>
           <line>53</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
