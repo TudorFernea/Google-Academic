@@ -4,7 +4,7 @@ export interface Disciplines{
     optional: boolean;
     credits: number;
     teacherName: string;
-    curriculum: Curriculum[];
+    curriculum: Curriculum;
 }
 
 export interface Curriculum {

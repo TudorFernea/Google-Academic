@@ -34,6 +34,12 @@ export class ViewCurriculumComponent implements OnInit {
     );
   }
   
+  getOptionalDisciplinesByYearOfStudy(yearnum: number){ //in functie de ce ai primit mai sus, apesi pe butonul de year1 sau year2 si se apeleaza asta ca sa populezi o lista cu discipline si curriculum
+    this.enrolService.getOptionalDisciplineByYearOfStudy(this.yearOfStudy[yearnum-1]).subscribe(
+      allDiscipline=>this.optionalDisciplines=allDiscipline
+    );
+  }
+
   /*
   seeMandatoryDisciplines(){
    

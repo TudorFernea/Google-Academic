@@ -16,7 +16,7 @@ export class ViewGradesComponent implements OnInit {
       optional: true,
       credits: 7,
       teacherName: "Emilia",
-      curriculum: [{id:0, text:"facem "}]
+      curriculum: {id:0, text:"facem "}
     },
     {
       id: 1,
@@ -24,7 +24,7 @@ export class ViewGradesComponent implements OnInit {
       optional: false,
       credits: 7,
       teacherName: "Emilia2",
-      curriculum: [{id:1, text:"facem2 "}]
+      curriculum: {id:1, text:"facem2 "}
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export class ViewGradesComponent implements OnInit {
       optional: false,
       credits: 7,
       teacherName: "Emilia3",
-      curriculum: [{id:2, text:"facem3 "}]
+      curriculum: {id:2, text:"facem3 "}
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ export class ViewGradesComponent implements OnInit {
       optional: false,
       credits: 7,
       teacherName: "Emilia3",
-      curriculum: [{id:3, text:"facem3 "}]
+      curriculum: {id:3, text:"facem3 "}
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ export class ViewGradesComponent implements OnInit {
       optional: true,
       credits: 2,
       teacherName: "Emilia4",
-      curriculum: [{id:4, text:"facem4 "}]
+      curriculum: {id:4, text:"facem4 "}
     }
 
   ];

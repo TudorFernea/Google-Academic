@@ -88,13 +88,31 @@ public class DisciplineController {
         return disciplineService.getDisciplineByYearOfStudyAndTeacher(yearOfStudy, teacher);
     }
 
-    @PostMapping("/getAllByYear")
+    @PostMapping("/getMandatoryByYear")
     public List<DisciplineDTO> getDisciplineByYearOfStudy(@RequestBody YearOfStudyDTO yearOfStudyDTO)
     {
         YearOfStudy yearOfStudy = yearOfStudyService.findYearOfStudy(yearOfStudyDTO.getId()).get();
 
         return disciplineService.getDisciplineByYearOfStudy(yearOfStudy)
                 .stream()
+                .filter(discipline -> !discipline.getOptional())
+                .map(discipline -> new DisciplineDTO(
+                        discipline.getId(),
+                        discipline.getName(),
+                        discipline.getOptional(),
+                        discipline.getNoOfCredits(),
+                        new CurriculumDTO(discipline.getCurriculum().getId(),discipline.getCurriculum().getText())
+                )).collect(Collectors.toList());
+    }
+
+    @PostMapping("/getOptionalByYear")
+    public List<DisciplineDTO> getOptionalDisciplineByYearOfStudy(@RequestBody YearOfStudyDTO yearOfStudyDTO)
+    {
+        YearOfStudy yearOfStudy = yearOfStudyService.findYearOfStudy(yearOfStudyDTO.getId()).get();
+
+        return disciplineService.getDisciplineByYearOfStudy(yearOfStudy)
+                .stream()
+                .filter(discipline -> discipline.getOptional())
                 .map(discipline -> new DisciplineDTO(
                         discipline.getId(),
                         discipline.getName(),

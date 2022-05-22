@@ -38,6 +38,7 @@ export class AssignGradeToStudentComponent implements OnInit {
     }
   ];
   students: Student[]=[];
+  disciplineId!: number;
   insertGradeForm= new FormGroup({
     grade: new FormControl(''),
   })
@@ -46,11 +47,19 @@ export class AssignGradeToStudentComponent implements OnInit {
 
   ngOnInit(): void {
     //document.getElementById("grade")?.innerHTML;
-    this.route.params.pipe(
-      switchMap(
-        (params:Params)=>this.teacherService.getAllStudentByDiscipline(+params['id'])
-      )
-    ).subscribe(student=>this.students=student)
+    this.route.params.subscribe(
+      params=>this.disciplineId=params['id']
+    )
+    this.teacherService.getAllStudentByDiscipline(this.disciplineId).subscribe(
+      student=>this.students=student
+    )
+  }
+
+  addGrade(student: Student){
+    //console.log("aaaaaa");
+    this.teacherService.addGrade(document.getElementById("grade")?.innerHTML, this.disciplineId, student.id).subscribe(
+      ()=>alert("Grade added")
+    )
   }
 
 }

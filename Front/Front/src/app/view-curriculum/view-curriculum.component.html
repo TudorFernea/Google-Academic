@@ -10,11 +10,11 @@
     <br>
     <div style="text-align: center" id="outer">
            
-        <button class="btn-grad inner"   style="cursor: pointer; " (click)="getDisciplinesByYearOfStudy(1)" id="year1" [disabled]="this.yearOfStudy.length==0" >
+        <button class="btn-grad inner"   style="cursor: pointer; " (click)="getDisciplinesByYearOfStudy(1);getOptionalDisciplinesByYearOfStudy(1)" id="year1" [disabled]="this.yearOfStudy.length==0" >
             Year 1
         </button>
         &nbsp;
-        <button class="btn-grad inner" style="cursor: pointer;" (click)="getDisciplinesByYearOfStudy(2)"  id="year2"  [disabled]="this.yearOfStudy.length<2" >
+        <button class="btn-grad inner" style="cursor: pointer;" (click)="getDisciplinesByYearOfStudy(2);getOptionalDisciplinesByYearOfStudy(2)"  id="year2"  [disabled]="this.yearOfStudy.length<2" >
             Year 2
         </button>
         
@@ -37,19 +37,17 @@
             <div style="max-height: 220px; overflow: auto;">
                 <table>
                     <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
-                        <th>Discipline</th>
+                        <th>Discipline name</th>
+                        <th>Number of credits</th>
                         <th>Curriculum</th>
-                        <th>Optional</th>
-                        
-
                     </tr>
 
                     <tbody id="disciplinesAndOptinals">
 
                         <tr *ngFor="let discipline of disciplines">
                             <td> {{discipline.name}}</td>
-                            <td> {{discipline.curriculum[0].text}}</td>
-                            <td> {{discipline.optional}}</td>
+                            <td> {{discipline.credits}}</td>
+                            <td> {{discipline.curriculum.text}}</td>
                         </tr>
                     </tbody>
 
@@ -61,7 +59,7 @@
         <div style="position: relative; margin-left: 25px; margin-right: 25px;">
         
             <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}}
+                <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Discipline name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}} <b>Curriculum:</b>  {{discipline.curriculum.text}}
                     
         </div> 
 </div>

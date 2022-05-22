@@ -28,9 +28,8 @@ export class AddDisciplineComponent implements OnInit {
         this.addDisciplineForm.controls["curriculum"].value,
         this.authService.getUsername()
       ).subscribe(
-        ()=>console.log("ok")
+        ()=>alert("Optional added successfully")
       );
-      console.log("babbbbbbbb");
   }
 
 }

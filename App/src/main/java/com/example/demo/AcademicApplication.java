@@ -47,16 +47,30 @@ public class AcademicApplication {
 			student.setYearOfStudy1(yearOfStudy);
 			studentService.addStudent(student);
 
-			Discipline discipline = new Discipline("asc",false);
+			Discipline discipline = new Discipline("asc",false, 10);
+			Discipline optional = new Discipline("fp",true, 2);
+
 			discipline.setYearOfStudy(yearOfStudy);
 			discipline.setTeacher(teacher);
+
+			optional.setYearOfStudy(yearOfStudy);
+			optional.setTeacher(teacher);
+
+			disciplineService.addDiscipline(optional);
 			disciplineService.addDiscipline(discipline);
 			//teacherService.addTeacher(teacher);
 
 			Curriculum curriculum = new Curriculum("un prost", discipline);
+			Curriculum optionalCurriculum = new Curriculum("cel mai prost", optional);
+
 			discipline.setCurriculum(curriculum);
+			optional.setCurriculum(optionalCurriculum);
+
 			curriculumService.addCurriculum(curriculum);
+			curriculumService.addCurriculum(optionalCurriculum);
+
 			disciplineService.addDiscipline(discipline);
+			disciplineService.addDiscipline(optional);
 
 
 			/*

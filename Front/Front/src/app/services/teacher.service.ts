@@ -12,6 +12,8 @@ export class TeacherService {
   private disciplineUrl: string="http://localhost:8080/api/discipline";
   private teacherUrl: string="http://localhost:8080/api/teacher";
   private studentUrl: string="http://localhost:8080/api/student"
+  private gradeUrl: string="http://localhost:8080/api/grade"
+
   constructor(
     private http: HttpClient,
   ) { }
@@ -38,8 +40,12 @@ export class TeacherService {
 
   addDiscipline(name: string, nrcredit: number, description: string, username: string): Observable<boolean>{
       const url = `${this.disciplineUrl}/addOptional`;
-      console.log("aaaaa");
       return this.http.post<boolean>(url, {username,name, nrcredit, description});
+  }
+
+  addGrade(grade: string | undefined, disciplineId: number, studentId: number): Observable<boolean> {
+      const url = `${this.gradeUrl}/add`;
+      return this.http.post<boolean>(url, {grade, disciplineId, studentId});
   }
 
   /*

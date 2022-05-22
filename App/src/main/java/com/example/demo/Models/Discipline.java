@@ -11,9 +11,10 @@ public class Discipline {
     public Discipline() {
     }
 
-    public Discipline(String name, Boolean optional) {
+    public Discipline(String name, Boolean optional, Integer noOfCredits) {
         this.name = name;
         this.optional = optional;
+        this.noOfCredits = noOfCredits;
     }
 
     public Discipline(Integer id, String name, Boolean optional) {

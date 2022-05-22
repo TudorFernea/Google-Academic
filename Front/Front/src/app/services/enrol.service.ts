@@ -31,7 +31,12 @@ export class EnrolService {
   }
 
   getDisciplineByYearOfStudy(yearOfStudy: YearOfStudy): Observable<Disciplines[]>{
-    const url = `${this.disciplineUrl}/getAllByYear`;
+    const url = `${this.disciplineUrl}/getMandatoryByYear`;
+    return this.http.post<Disciplines[]>(url, yearOfStudy);
+  }
+
+  getOptionalDisciplineByYearOfStudy(yearOfStudy: YearOfStudy): Observable<Disciplines[]>{
+    const url = `${this.disciplineUrl}/getOptionalByYear`;
     return this.http.post<Disciplines[]>(url, yearOfStudy);
   }
 
