@@ -15,5 +15,6 @@ public interface DisciplineRepository extends JpaRepository<Discipline, Integer>
     List<Discipline> findDisciplineByCurriculum(Curriculum curriculum);
     List<Discipline> findDisciplineByTeacher(Teacher teacher);
     List<Discipline> findDisciplineByYearOfStudyAndTeacher(YearOfStudy yearOfStudy, Teacher teacher);
+    List<Discipline> findDisciplineByYearOfStudy(YearOfStudy yearOfStudy);
 
 }

@@ -47,6 +47,11 @@ export class AuthService {
     return this.jwtHelper.decodeToken(accessToken==null?undefined:accessToken).roles;
   }
 
+  getUsername(){
+    const accessToken=AuthService.getAccessToken();
+    return this.jwtHelper.decodeToken(accessToken==null?undefined:accessToken).sub;
+  }
+
   logout() {
     // localStorage.setItem("faculty", '');
     localStorage.removeItem("faculties")

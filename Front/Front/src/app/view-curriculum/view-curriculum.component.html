@@ -23,16 +23,17 @@
                     <tr style="position: sticky; top:0; background-color: white;">
                         <th>Discipline</th>
                         <th>Curriculum</th>
+                        <th>Optional</th>
                         
 
                     </tr>
 
                     <tbody id="disciplinesAndOptinals">
 
-                        <tr *ngFor="let discipline of mandatoryDiscipline">
+                        <tr *ngFor="let discipline of disciplines">
                             <td> {{discipline.name}}</td>
                             <td> {{discipline.curriculum[0].text}}</td>
-                           
+                            <td> {{discipline.optional}}</td>
                         </tr>
                     </tbody>
 

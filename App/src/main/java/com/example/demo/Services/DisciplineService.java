@@ -25,7 +25,7 @@ public class DisciplineService {
         this.disciplineRepository = disciplineRepository;
     }
 
-    public List<Discipline> getDisciplines(){
+    public List<Discipline> getAllDiscipline(){
         return disciplineRepository.findAll();
     }
     public List<Discipline> getOptionals(){
@@ -60,4 +60,8 @@ public class DisciplineService {
         return disciplineRepository.findDisciplineByYearOfStudyAndTeacher(yearOfStudy, teacher);
     }
 
+    public List<Discipline> getDisciplineByYearOfStudy(YearOfStudy yearOfStudy)
+    {
+        return disciplineRepository.findDisciplineByYearOfStudy(yearOfStudy);
+    }
 }

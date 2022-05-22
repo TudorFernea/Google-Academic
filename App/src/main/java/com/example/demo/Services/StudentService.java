@@ -32,6 +32,10 @@ public class StudentService {
         studentRepository.save(student);
     }
 
+    public Student findByUsername(String username){
+        return this.studentRepository.findStudentByUsername(username);
+    }
+
     public List<Discipline> getDisciplinesOfAStudent(Student student)
     {
         List<Discipline> disciplines = new ArrayList<>();

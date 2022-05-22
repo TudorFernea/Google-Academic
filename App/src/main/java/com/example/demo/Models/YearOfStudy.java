@@ -2,6 +2,7 @@ package com.example.demo.Models;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.parameters.P;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,6 +21,19 @@ public class YearOfStudy {
         this.year = year;
         this.student1List = student1List;
         this.student2List = student2List;
+    }
+
+    public YearOfStudy(Integer year, Specialization specialization)
+    {
+        this.year = year;
+        this.specialization = specialization;
+    }
+
+    public YearOfStudy(Integer id, Integer year, Specialization specialization)
+    {
+        this.id = id;
+        this.year = year;
+        this.specialization = specialization;
     }
 
     @Id

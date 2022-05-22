@@ -21,7 +21,7 @@ public class GradeController {
     }
 
     @GetMapping(value="/bystudent") // view grades
-    public List<Grade> getGradesByStudent(@RequestBody Student student){
+    public List<Grade> getGradesByStudent(@RequestBody Student student){ //gradedto cu grade si discipline grade
         return gradeService.getGradesByStudent(student);
     }
 

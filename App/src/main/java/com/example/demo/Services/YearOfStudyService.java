@@ -1,9 +1,6 @@
 package com.example.demo.Services;
 
-import com.example.demo.Models.Discipline;
-import com.example.demo.Models.Student;
 import com.example.demo.Models.YearOfStudy;
-import com.example.demo.Repositories.DisciplineRepository;
 import com.example.demo.Repositories.YearOfStudyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,12 +17,12 @@ public class YearOfStudyService {
         this.yearOfStudyRepository = yearOfStudyRepository;
     }
 
-    public List<YearOfStudy> getYearsOfStudy(){
+    public List<YearOfStudy> getAllYearOfStudy(){
         return yearOfStudyRepository.findAll();
     }
 
-    public Optional<YearOfStudy> findYearOfStudy(YearOfStudy yearOfStudy){
-        return yearOfStudyRepository.findById(yearOfStudy.getId());
+    public Optional<YearOfStudy> findYearOfStudy(Integer id){
+        return yearOfStudyRepository.findById(id);
     }
 
     public void addYearOfStudy(YearOfStudy yearOfStudy) {

@@ -131,4 +131,12 @@ public class Discipline {
     public void setNoOfCredits(Integer noOfCredits) {
         this.noOfCredits = noOfCredits;
     }
+
+    public YearOfStudy getYearOfStudy() {
+        return yearOfStudy;
+    }
+
+    public void setYearOfStudy(YearOfStudy yearOfStudy) {
+        this.yearOfStudy = yearOfStudy;
+    }
 }

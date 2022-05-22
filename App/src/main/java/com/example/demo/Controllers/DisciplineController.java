@@ -1,10 +1,11 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.Models.Discipline;
-import com.example.demo.Models.Student;
-import com.example.demo.Models.Teacher;
-import com.example.demo.Models.YearOfStudy;
+import com.example.demo.DTOs.CurriculumDTO;
+import com.example.demo.DTOs.DisciplineDTO;
+import com.example.demo.DTOs.YearOfStudyDTO;
+import com.example.demo.Models.*;
 import com.example.demo.Services.DisciplineService;
+import com.example.demo.Services.YearOfStudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,15 +18,17 @@ import java.util.stream.Stream;
 public class DisciplineController {
 
     private final DisciplineService disciplineService;
+    private final YearOfStudyService yearOfStudyService;
 
     @Autowired
-    public DisciplineController(DisciplineService disciplineService) {
+    public DisciplineController(DisciplineService disciplineService, YearOfStudyService yearOfStudyService) {
         this.disciplineService = disciplineService;
+        this.yearOfStudyService = yearOfStudyService;
     }
 
     @GetMapping
-    public List<Discipline> getDisciplines(){
-        return disciplineService.getDisciplines();
+    public List<Discipline> getAllDiscipline(){
+        return disciplineService.getAllDiscipline();
     }
 
     @PostMapping("/add")
@@ -66,5 +69,21 @@ public class DisciplineController {
     public List<Discipline> getDisciplineByTeacherAndYearOfStudy(@RequestBody Teacher teacher, YearOfStudy yearOfStudy)
     {
         return disciplineService.getDisciplineByYearOfStudyAndTeacher(yearOfStudy, teacher);
+    }
+
+    @PostMapping("/getAllByYear")
+    public List<DisciplineDTO> getDisciplineByYearOfStudy(@RequestBody YearOfStudyDTO yearOfStudyDTO)
+    {
+        YearOfStudy yearOfStudy = yearOfStudyService.findYearOfStudy(yearOfStudyDTO.getId()).get();
+
+        return disciplineService.getDisciplineByYearOfStudy(yearOfStudy)
+                .stream()
+                .map(discipline -> new DisciplineDTO(
+                        discipline.getId(),
+                        discipline.getName(),
+                        discipline.getOptional(),
+                        discipline.getNoOfCredits(),
+                        new CurriculumDTO(discipline.getCurriculum().getId(),discipline.getCurriculum().getText())
+                )).collect(Collectors.toList());
     }
 }

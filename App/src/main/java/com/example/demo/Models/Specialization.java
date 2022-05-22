@@ -2,6 +2,7 @@ package com.example.demo.Models;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -14,7 +15,13 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
+@NoArgsConstructor
 public class Specialization {
+
+    public Specialization(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
 
     @Id
     @SequenceGenerator(

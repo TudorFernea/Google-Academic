@@ -11,7 +11,7 @@
     <br>
     <div class=" chenarButoane " style="padding-bottom: 0%;">
 
-        <div>  Year of study: {{yearOfStudy[currentId].year}}</div>
+        <div *ngIf = "yearOfStudy">  Year of study: {{yearOfStudy[currentId].year}}</div>
     </div>
 
     <br>
@@ -46,7 +46,7 @@
         <br>
         <br>
         <div style="text-align: center">
-            <button (click)="enrol()">Enrol</button>
+            <button (click)="enrol()">Enroll</button>
         </div>
         <br>
         <div style="text-align: center">

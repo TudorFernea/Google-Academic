@@ -1,12 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.Models.Admin;
-import com.example.demo.Models.Student;
-import com.example.demo.Models.User;
-import com.example.demo.Services.SecurityService;
-import com.example.demo.Services.StudentService;
-import com.example.demo.Services.TeacherService;
-import com.example.demo.Services.UserService;
+import com.example.demo.DTOs.CurriculumDTO;
+import com.example.demo.Models.*;
+import com.example.demo.Services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,14 +23,34 @@ public class AcademicApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(SecurityService securityService, UserService userService, StudentService studentService, TeacherService teacherService){
+	CommandLineRunner run(SecurityService securityService, UserService userService, StudentService studentService, TeacherService teacherService, YearOfStudyService yearOfStudyService, SpecializationService specializationService, DisciplineService disciplineService, CurriculumService curriculumService){
 		return args -> {
 			//User user =  new User("user1","1234","test@gmail.com","ion","pop");
 			//userService.addUser(user);
 
-			//Student student = new Student("user1","1234","test@gmail.com","ion","pop", "923");
-			//studentService.addStudent(student);
-			//securityService.addUser(student);
+			Student student = new Student("user1","1234","test@gmail.com","ion","pop", "923");
+			studentService.addStudent(student);
+			securityService.addUser(student);
+
+			Specialization specialization = new Specialization("mate info","engleza");
+			specializationService.addSpecialization(specialization);
+
+			YearOfStudy yearOfStudy = new YearOfStudy(1, specialization);
+			yearOfStudyService.addYearOfStudy(yearOfStudy);
+
+			YearOfStudy yearOfStudy2 = new YearOfStudy(2, specialization);
+			yearOfStudyService.addYearOfStudy(yearOfStudy2);
+
+
+			Discipline discipline = new Discipline("asc",false);
+			discipline.setYearOfStudy(yearOfStudy);
+			disciplineService.addDiscipline(discipline);
+
+			Curriculum curriculum = new Curriculum("un prost", discipline);
+			discipline.setCurriculum(curriculum);
+			curriculumService.addCurriculum(curriculum);
+			disciplineService.addDiscipline(discipline);
+
 
 			/*
 			AcademicUser academicUser2 = new AcademicUser(null,"test.teacher","test","test.teacher@gmail.com","Test Teacher","5030303030303");

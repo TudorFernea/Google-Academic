@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/YearOfStudyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/CurriculumDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/DisciplineDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/YearOfStudyDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Curriculum.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Curriculum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Specialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Specialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/YearOfStudy.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/YearOfStudy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/DisciplineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/DisciplineRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/StudentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/SecurityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/YearOfStudyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/YearOfStudyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,29 +148,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthorizationFilter.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Registration/RegistrationController.java</url>
-          <line>18</line>
-          <properties class="com.example.demo.Registration.RegistrationController" method="register">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
