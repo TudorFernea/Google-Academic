@@ -32,6 +32,10 @@ public class AcademicApplication {
 			studentService.addStudent(student);
 			securityService.addUser(student);
 
+			Teacher teacher = new Teacher("user2","1234","test@gmail.com","abcd","pop", false);
+			teacherService.addTeacher(teacher);
+			securityService.addUser(teacher);
+
 			Specialization specialization = new Specialization("mate info","engleza");
 			specializationService.addSpecialization(specialization);
 
@@ -40,11 +44,14 @@ public class AcademicApplication {
 
 			YearOfStudy yearOfStudy2 = new YearOfStudy(2, specialization);
 			yearOfStudyService.addYearOfStudy(yearOfStudy2);
-
+			student.setYearOfStudy1(yearOfStudy);
+			studentService.addStudent(student);
 
 			Discipline discipline = new Discipline("asc",false);
 			discipline.setYearOfStudy(yearOfStudy);
+			discipline.setTeacher(teacher);
 			disciplineService.addDiscipline(discipline);
+			//teacherService.addTeacher(teacher);
 
 			Curriculum curriculum = new Curriculum("un prost", discipline);
 			discipline.setCurriculum(curriculum);

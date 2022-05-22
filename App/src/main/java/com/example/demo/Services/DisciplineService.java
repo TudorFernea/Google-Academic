@@ -64,4 +64,8 @@ public class DisciplineService {
     {
         return disciplineRepository.findDisciplineByYearOfStudy(yearOfStudy);
     }
+
+    public Discipline getDiscipline(Integer id) {
+        return disciplineRepository.findDisciplineById(id);
+    }
 }

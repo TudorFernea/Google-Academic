@@ -26,7 +26,7 @@ export interface Grade{
 }
 export interface Student{
     id: number,
-    nume: string,
-    prenume: string
-
+    firstName: string,
+    lastName: string,
+    group: string
 }

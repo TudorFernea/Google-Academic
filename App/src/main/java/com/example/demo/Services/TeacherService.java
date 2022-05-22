@@ -34,4 +34,8 @@ public class TeacherService {
     {
         return teacher.getDisciplineList().contains(discipline);
     }
+
+    public Teacher findTeacherByUsername(String username){
+        return teacherRepository.findTeacherByUsername(username);
+    }
 }

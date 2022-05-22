@@ -30,14 +30,16 @@
                     <tbody id="addGradeSt">
 
                         <tr *ngFor="let student of students" >
-                            <td> {{student.nume}}</td>
-                            <td> {{student.prenume}}</td>
-                            <td> {{923}}</td>
+                            <td> {{student.firstName}}</td>
+                            <td> {{student.lastName}}</td>
+                            <td> {{student.group}}</td>
                              <td>  
                                 <p contenteditable="true">  </p> </td> 
-                                <td>  <button type="submit"  class="btn-grad">
+                                <td>  
+                                <button type="submit"  class="btn-grad">
                                     Add 
-                    </button></td>
+                                </button>
+                                </td>
                         </tr>
                        
                     </tbody>

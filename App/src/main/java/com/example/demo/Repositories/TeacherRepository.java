@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
 
     Teacher findTeacherById(Integer ID);
+    Teacher findTeacherByUsername(String username);
 }

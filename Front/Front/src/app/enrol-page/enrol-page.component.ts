@@ -37,10 +37,11 @@ export class EnrolPageComponent implements OnInit {
   }
   getAllYearOfStudy(){
     this.enrolService.getAllYearOfStudy().subscribe(
-      allYear=>{this.yearOfStudy=allYear,
+      allYear=>{
+      this.yearOfStudy=allYear,
       this.getDisciplinesByYearOfStudy()
       }
-      )
+    )
   }
   
   getDisciplinesByYearOfStudy(){

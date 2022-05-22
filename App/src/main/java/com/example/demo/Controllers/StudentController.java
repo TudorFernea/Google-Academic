@@ -1,9 +1,13 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.DTOs.CurriculumDTO;
+import com.example.demo.DTOs.DisciplineDTO;
+import com.example.demo.DTOs.StudentDTO;
 import com.example.demo.DTOs.YearOfStudyDTO;
 import com.example.demo.Models.Discipline;
 import com.example.demo.Models.Student;
 import com.example.demo.Models.YearOfStudy;
+import com.example.demo.Services.DisciplineService;
 import com.example.demo.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,10 +23,12 @@ import java.util.stream.Collectors;
 public class StudentController {
 
     private final StudentService studentService;
+    private final DisciplineService disciplineService;
 
     @Autowired
-    public StudentController(StudentService studentService) {
+    public StudentController(StudentService studentService, DisciplineService disciplineService) {
         this.studentService = studentService;
+        this.disciplineService = disciplineService;
     }
 
     @GetMapping
@@ -72,10 +78,18 @@ public class StudentController {
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/studentsByDiscipline")
-    public List<Student> getStudentsByDiscipline(@RequestBody Discipline discipline)
+    @PostMapping("/studentsByDiscipline/{disciplineId}")
+    public List<StudentDTO> getStudentsByDiscipline(@PathVariable Integer disciplineId)
     {
-        return studentService.getStudentsByDiscipline(discipline);
+        Discipline discipline = this.disciplineService.getDiscipline(disciplineId);
+        return studentService.getStudentsByDiscipline(discipline)
+                .stream()
+                .map(student -> new StudentDTO(
+                        student.getId(),
+                        student.getFirstName(),
+                        student.getLastName(),
+                        student.getGroupName()
+                )).collect(Collectors.toList());
     }
 }
 

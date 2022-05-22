@@ -39,8 +39,10 @@ public class StudentService {
     public List<Discipline> getDisciplinesOfAStudent(Student student)
     {
         List<Discipline> disciplines = new ArrayList<>();
-        disciplines.addAll(student.getYearOfStudy1().getDisciplineList());
-        disciplines.addAll(student.getYearOfStudy2().getDisciplineList());
+        if(student.getYearOfStudy1()!=null)
+            disciplines.addAll(student.getYearOfStudy1().getDisciplineList());
+        if(student.getYearOfStudy2()!=null)
+            disciplines.addAll(student.getYearOfStudy2().getDisciplineList());
         return disciplines;
     }
 

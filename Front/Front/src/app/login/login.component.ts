@@ -64,7 +64,13 @@ export class LoginComponent {
       this.authService.loginUser(this.loginForm.controls["email"].value, this.loginForm.controls["password"].value).subscribe(
         ()=> 
           {
-            this.router.navigateByUrl('studentPage');
+            const role = this.authService.getRoles();
+            if (role == "STUDENT")
+              this.router.navigateByUrl('studentPage');
+            else if(role == "TEACHER")
+              this.router.navigateByUrl('teacherPage');
+            else if(role == "CHIEF")
+              this.router.navigateByUrl('teacherPage');
           },
         ()=>
           {
