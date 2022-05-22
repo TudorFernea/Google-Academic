@@ -157,3 +157,12 @@ button[disabled]{
     margin-left: 5%;
     margin-top: 2%;
 }
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}

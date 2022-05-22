@@ -10,6 +10,7 @@ export class ChooseYearOfStudyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

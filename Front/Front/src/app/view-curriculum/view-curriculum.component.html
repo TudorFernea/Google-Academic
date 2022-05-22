@@ -9,6 +9,19 @@
 <div class="Chenar">
     <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Mandatory disciplines </b></h4>
     <br>
+    <div style="text-align: center" id="outer">
+           
+        <button class="btn-grad inner"   style="cursor: pointer; " (click)="getDisciplinesByYearOfStudy(1)" id="year1" [disabled]="this.yearOfStudy.length==0" >
+            Year 1
+        </button>
+        &nbsp;
+        <button class="btn-grad inner" style="cursor: pointer;" (click)="getDisciplinesByYearOfStudy(2)"  id="year2"  [disabled]="this.yearOfStudy.length<2" >
+            Year 2
+        </button>
+        
+    </div>
+
+
      <div class=" chenarButoane " style="padding-bottom: 0%;">
 
         <div style="font-family: 'Fira Sans', sans-serif; text-align: center;" > Year of study: {{yearOfStudy[currentId].year}} Specialization: {{yearOfStudy[currentId].specializationName}}</div>
