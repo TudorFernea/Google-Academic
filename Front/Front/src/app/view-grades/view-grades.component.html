@@ -10,7 +10,18 @@
     <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Your grades: </b></h4>
     <br>
     <div class=" chenarButoane " style="padding-bottom: 0%;">
-
+        <div style="text-align: center" id="outer">
+           
+            <button class="btn-grad inner"   style="cursor: pointer; "  id="year1" [disabled]="this.yearOfStudy.length==0" >
+                Year 1
+            </button>
+            &nbsp;
+            <button class="btn-grad inner" style="cursor: pointer;"   id="year2"  [disabled]="this.yearOfStudy.length<2" >
+                Year 2
+            </button>
+            
+        </div>
+    
       
     </div>
 

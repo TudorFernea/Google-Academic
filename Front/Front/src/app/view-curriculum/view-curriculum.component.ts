@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {  YearOfStudy, Disciplines} from '../models/curriculum';
 import { EnrolService } from '../services/enrol.service';
 import { AuthService } from '../Servicies/auth.service';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-view-curriculum',
   templateUrl: './view-curriculum.component.html',
@@ -13,7 +15,7 @@ export class ViewCurriculumComponent implements OnInit {
   disciplines: Disciplines[]=[];
   yearOfStudy: YearOfStudy[]=[];
   currentId: number = 0;
-
+  optionalDisciplines: Disciplines[]=[];
   constructor(private enrolService: EnrolService,private authService: AuthService) {}
  
   ngOnInit(): void {
@@ -31,7 +33,7 @@ export class ViewCurriculumComponent implements OnInit {
       allDiscipline=>this.disciplines=allDiscipline
     );
   }
-
+  
   /*
   seeMandatoryDisciplines(){
    
@@ -39,5 +41,11 @@ export class ViewCurriculumComponent implements OnInit {
     if(this.disciplines[i].optional==false){this.mandatoryDiscipline.push(this.disciplines[i])}
 
   }*/
-
+  drop(event: CdkDragDrop<Disciplines[]>) {
+    moveItemInArray(this.disciplines, event.previousIndex, event.currentIndex);
+  }
+  
+  isDragDrop(object: any): object is CdkDragDrop<string[]> {
+    return 'previousIndex' in object;
+  }
 }
