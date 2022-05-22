@@ -32,6 +32,11 @@ public class TeacherController {
         teacherService.addTeacher(teacher);
     }
 
+    @PostMapping("/get/{username}")
+    public Integer getTeacher(@PathVariable String username){
+        return teacherService.findTeacherByUsername(username).getId();
+    }
+
     @PostMapping("/getAllDiscipline/{username}")
     public List<DisciplineDTO> getAllDiscipline(@PathVariable String username){
         Teacher teacher = teacherService.findTeacherByUsername(username);

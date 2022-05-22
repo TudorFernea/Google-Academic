@@ -22,6 +22,15 @@ public class Discipline {
         this.optional = optional;
     }
 
+    public Discipline(String name, Boolean optional, Integer noOfCredits, Curriculum curriculum, Teacher teacher)
+    {
+        this.name = name;
+        this.optional = optional;
+        this.noOfCredits = noOfCredits;
+        this.curriculum = curriculum;
+        this.teacher = teacher;
+    }
+
     @Id
     @SequenceGenerator(
             name = "discipline_sequence",

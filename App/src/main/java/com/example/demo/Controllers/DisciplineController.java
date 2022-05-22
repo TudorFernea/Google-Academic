@@ -1,10 +1,13 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.DTOs.AddOptionalDTO;
 import com.example.demo.DTOs.CurriculumDTO;
 import com.example.demo.DTOs.DisciplineDTO;
 import com.example.demo.DTOs.YearOfStudyDTO;
 import com.example.demo.Models.*;
+import com.example.demo.Services.CurriculumService;
 import com.example.demo.Services.DisciplineService;
+import com.example.demo.Services.TeacherService;
 import com.example.demo.Services.YearOfStudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +22,15 @@ public class DisciplineController {
 
     private final DisciplineService disciplineService;
     private final YearOfStudyService yearOfStudyService;
+    private final TeacherService teacherService;
+    private final CurriculumService curriculumService;
 
     @Autowired
-    public DisciplineController(DisciplineService disciplineService, YearOfStudyService yearOfStudyService) {
+    public DisciplineController(DisciplineService disciplineService, YearOfStudyService yearOfStudyService, TeacherService teacherService, CurriculumService curriculumService) {
         this.disciplineService = disciplineService;
         this.yearOfStudyService = yearOfStudyService;
+        this.teacherService = teacherService;
+        this.curriculumService = curriculumService;
     }
 
     @GetMapping
@@ -34,6 +41,16 @@ public class DisciplineController {
     @PostMapping("/add")
     public void addDiscipline(@RequestBody Discipline discipline) {
         disciplineService.addDiscipline(discipline);
+    }
+
+    @PostMapping("/addOptional")
+    public boolean addDiscipline(@RequestBody AddOptionalDTO addOptionalDTO) {
+        Curriculum curriculum = new Curriculum(addOptionalDTO.getDescription());
+        curriculumService.addCurriculum(curriculum);
+        Teacher teacher = teacherService.findTeacherByUsername(addOptionalDTO.getUsername());
+        Discipline discipline = new Discipline(addOptionalDTO.getName(), true,addOptionalDTO.getNrcredit(), curriculum, teacher);
+        disciplineService.addDiscipline(discipline);
+        return true;
     }
 
     /*@PostMapping("/optionals")

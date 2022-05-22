@@ -78,7 +78,7 @@ public class StudentController {
             list.add(yearOfStudy1);
         if(yearOfStudy2 != null)
             list.add(yearOfStudy2);
-        
+
         return list
                 .stream()
                 .map(year -> new YearOfStudyDTO(

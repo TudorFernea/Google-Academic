@@ -20,6 +20,10 @@ public class Curriculum {
         this.discipline = discipline;
     }
 
+    public Curriculum(String text) {
+        this.text = text;
+    }
+
     @Id
     @SequenceGenerator(
             name = "curriculum_sequence",

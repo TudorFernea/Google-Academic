@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { Disciplines, Student, YearOfStudy } from '../models/curriculum';
 
 @Injectable({
@@ -35,5 +35,18 @@ export class TeacherService {
     const url = `${this.teacherUrl}/getAllByYear`;
     return this.http.post<Disciplines[]>(url, yearOfStudy);
   }
+
+  addDiscipline(name: string, nrcredit: number, description: string, username: string): Observable<boolean>{
+      const url = `${this.disciplineUrl}/addOptional`;
+      console.log("aaaaa");
+      return this.http.post<boolean>(url, {username,name, nrcredit, description});
+  }
+
+  /*
+  getTeacher(username: string): Observable<number>{
+    const url = `${this.teacherUrl}/get/${username}`;
+    return this.http.post<number>(url, username);
+  }
+  */
 
 }
