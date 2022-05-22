@@ -7,7 +7,9 @@
 </div>
 
 <div class="Chenar">
-    <h4 class=" title2 "> Enrol to a year (or at most 2 years) of study </h4>
+    <br>
+    <div class="inputLogin">
+    <h4 class=" title2 " style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px;"><b> Enrol to a year (or at most 2 years) of study </b></h4>
     <br>
     <div class=" chenarButoane " style="padding-bottom: 0%;">
 
@@ -17,11 +19,12 @@
     <br>
 
     <div>
-        <div style="position: relative">
+        <div style="position: relative; margin-left: 25px;
+        margin-right: 25px;">
             <div style="max-height: 220px; overflow: auto;">
                 <table>
-                    <tr style="position: sticky; top:0; background-color: white;">
-                        <th>Discipline</th>
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 16px;">
+                        <th >Discipline</th>
                         <th>Optional</th>
                         <th>Credits</th>
                         <th>Teacher Name</th>
@@ -44,19 +47,29 @@
             </div>
         </div>
         <br>
-        <br>
-        <div style="text-align: center">
-            <button (click)="enrol()">Enroll</button>
+     
+
+        <div class="parinteleButonului">
+            <button class="btn-grad"  style="cursor: pointer;" (click)="enrol()">
+                Enrol
+            </button>
         </div>
-        <br>
-        <div style="text-align: center">
-            <button (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">Previous</button>
+            
+        <div style="text-align: center" id="outer">
+           
+            <button class="btn-grad inner"  style="cursor: pointer;" (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">
+                Previous
+            </button>
             &nbsp;
-            <button (click)="nextCurriculum()" id="nextButton"
-                [disabled]="currentId===yearOfStudy.length-1">Next</button>
+            <button class="btn-grad inner"  style="cursor: pointer;" (click)="nextCurriculum()" id="nextButton"
+            [disabled]="currentId===yearOfStudy.length-1">
+                Next
+            </button>
+            
         </div>
 
 
     </div> 
+    </div>
 
 </div>

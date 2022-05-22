@@ -1,0 +1,53 @@
+<div class="ChenarSignUp"  >
+    <h1 class="title createAcc"> Create account </h1>
+    <div>
+
+        <form [formGroup]="signUpForm" class="inputLogin">
+
+            <input type="text" id="nameSignUp" name="nameSignUp" placeholder="Name" formControlName = "name">
+            <br>
+            <br>
+
+            <input type="text" id="surnameSignUp" name="surnameSignUp" placeholder="Surname" formControlName = "surname">
+            <br>
+            <br>
+            <input type="text" id="usernameSignUp" name="usernameSignUp" placeholder="Username" formControlName = "username">
+            <br>
+            <br>
+
+            <input type="email" field="*{email}" id="emailSignUp" name="emailSignUp" placeholder="Email" formControlName="email">
+            <br>
+            <br>
+
+            
+ 
+            <input type="password" id="passwordFirst" name="passwordFirst" placeholder="Password" formControlName = "password">
+            <br>
+            <br>
+            <input type="password" id="passwordSecond" name="passwordSecond" placeholder="Confirm Password" formControlName = "confirmPassword">
+
+        </form>
+
+        <form [formGroup]="positionForm" (ngSubmit)="signUpStudent()"  class="studentOrTeacherCheckbox">
+            
+            <input type="radio"  (change)="getRadioValue()" class="inputRadio" id="studentOption" name="position" value="student" formControlName="position" >
+            <label for="studentOption"> I'm a student</label><br>
+            <input type="radio" (change)="getRadioValue()" id="teacherOption" name="position" value="teacher" class="inputRadio" formControlName="position">
+            <label for="teacherOption"> I'm a teacher</label>
+        </form>
+
+
+    </div>
+    <br>
+        <div class="parinteleButonului">
+            <button type="submit" (click)="signUpStudent()" routerLink="/login" class="btn-grad">
+                Sign up
+            </button>
+        </div>
+
+        
+
+
+
+</div>
+

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -17,6 +16,12 @@ import { ViewGradesComponent } from './view-grades/view-grades.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthService } from './Servicies/auth.service';
 import { ChooseYearOfStudy2Component } from './choose-year-of-study2/choose-year-of-study2.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { TeacherPageComponent } from './teacher-page/teacher-page.component';
+import { AddDisciplineComponent } from './add-discipline/add-discipline.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddGradeComponent } from './add-grade/add-grade.component';
+import { AssignGradeToStudentComponent } from './assign-grade-to-student/assign-grade-to-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,12 @@ import { ChooseYearOfStudy2Component } from './choose-year-of-study2/choose-year
     ChooseYearOfStudyComponent,
     SeeOptionalDisciplinesComponent,
     ViewGradesComponent,
-    ChooseYearOfStudy2Component
+    ChooseYearOfStudy2Component,
+    RegistrationComponent,
+    TeacherPageComponent,
+    AddDisciplineComponent,
+    AddGradeComponent,
+    AssignGradeToStudentComponent
   ],
   imports: [
     BrowserModule,

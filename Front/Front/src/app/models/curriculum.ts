@@ -24,3 +24,9 @@ export interface Grade{
     disciplineId: number,
     value: number
 }
+export interface Student{
+    id: number,
+    nume: string,
+    prenume: string
+
+}

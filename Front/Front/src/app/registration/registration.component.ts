@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import {Router} from "@angular/router";
-import { RegisterService } from '../services/register.service';
-import {SignUpService} from '../services/sign-up.service'
+import { SignUpService } from '../services/sign-up.service';
 import { AuthService } from '../Servicies/auth.service';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class LoginComponent {
-  signUp: boolean = false;
+export class RegistrationComponent  {
+  
 
-  loginForm = new FormGroup({
-    email : new FormControl(''),
-    password : new FormControl(''),
-  })
+ 
 
   signUpForm= new FormGroup({
     name: new FormControl(''),
@@ -34,11 +30,11 @@ export class LoginComponent {
 
 
   constructor(private router: Router, 
-    private registerService: RegisterService,
     private signUpService: SignUpService,
     private authService: AuthService) { 
   }
 
+ 
 
   validateEmail(input: String): boolean{
     if (input.indexOf("@yahoo.com")===-1 && input.indexOf("@gmail.com")===-1){
@@ -56,23 +52,7 @@ export class LoginComponent {
     return true;
   }
 
-  public redirectStudent() {
-    if(this.loginForm.controls["email"].value === "idk"){
-      this.router.navigateByUrl('teacherPage');
-    }
-    else //if(this.validateEmail(this.loginForm.controls["email"].value)  && this.validatePassword(this.loginForm.controls["password"].value))
-      this.authService.loginUser(this.loginForm.controls["email"].value, this.loginForm.controls["password"].value).subscribe(
-        ()=> 
-          {
-            this.router.navigateByUrl('studentPage');
-          },
-        ()=>
-          {
-            alert("Invalid email and/or password!");
-          }
-    )
-    // location.replace("studentPage/");
-  }
+ 
 
   public getRadioValue(){
     if (this.positionForm.controls["position"].value==='student') {console.log('student'); return 'STUDENT';}

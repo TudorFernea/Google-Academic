@@ -9,6 +9,11 @@ import { StudentPageComponentComponent } from './student-page/student-page-compo
 import { ViewCurriculumComponent } from './view-curriculum/view-curriculum.component';
 import { ViewGradesComponent } from './view-grades/view-grades.component';
 import {ChooseYearOfStudy2Component} from './choose-year-of-study2/choose-year-of-study2.component'
+import { RegistrationComponent } from './registration/registration.component';
+import { TeacherPageComponent } from './teacher-page/teacher-page.component';
+import { AddDisciplineComponent } from './add-discipline/add-discipline.component';
+import { AddGradeComponent } from './add-grade/add-grade.component';
+import { AssignGradeToStudentComponent } from './assign-grade-to-student/assign-grade-to-student.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -19,7 +24,12 @@ const routes: Routes = [
   {path: 'chooseYearOfStudyPage', component: ChooseYearOfStudyComponent},
   {path: 'seeOptionalDisciplinesPage', component: SeeOptionalDisciplinesComponent},
   {path: 'viewGradesPage', component: ViewGradesComponent},
-  {path: 'chooseYearOfStudy2', component: ChooseYearOfStudy2Component}
+  {path: 'chooseYearOfStudy2', component: ChooseYearOfStudy2Component},
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'teacherPage', component: TeacherPageComponent},
+  {path: 'addDiscipline', component: AddDisciplineComponent},
+  {path: 'addGrade', component: AddGradeComponent},
+  {path: 'assignGradeToStudent', component: AssignGradeToStudentComponent}
 
 ];
 

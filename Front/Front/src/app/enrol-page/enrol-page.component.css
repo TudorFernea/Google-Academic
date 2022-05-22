@@ -5,6 +5,20 @@ padding-bottom: 50%;
     
 }
 
+.inputLogin{
+  align-items: center;
+  display: block;
+  border:0;
+
+  font-family: 'Fira Sans', sans-serif;
+  /* margin-left: 7px;
+  margin-right: 7px; */
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+
+  width: 100%; display: inline-block; text-align: center;
+}
+
 .butonStyle{
     text-transform: uppercase;
  transition: 0.5s;
@@ -58,3 +72,83 @@ table {
     color: black;
    
   }
+  .lista{
+    padding-left: 10px;
+    padding-right: 10px;
+    
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border:0;
+   
+    
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border:0;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #c3e0ff;
+  }
+  
+.butonStyle{
+  text-transform: uppercase;
+transition: 0.5s;
+background-size: 50% auto;
+color:white;          
+/* padding-left:0;
+display: block;
+; */
+/* background-color:  #35a5cd;*/
+border:0px;
+background-color: #268aef;
+text-align:center;
+width: 30%;
+cursor: pointer;
+
+}
+.btn-grad {
+  
+   
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color:white;          
+  padding-left:0;
+  display: block;
+  border:0px;
+ /* background-color:  #35a5cd;*/
+ background-color: #268aef;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color:#005CCD ;
+  text-decoration: none;
+}
+
+.parinteleButonului{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+button[disabled]{
+ 
+  background-color: #c3e0ff
+  
+}
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
