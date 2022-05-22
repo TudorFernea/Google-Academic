@@ -1,0 +1,77 @@
+
+<div class="Bara">
+    <div class="navBarLogo">
+        <img src="/assets/t2.png"  class="navBarPic">;
+    </div>
+    <i class="fa-solid fa-screen-users"></i>
+
+</div>
+<div class="ChenarSignUp"  >
+    <br>
+    <br>
+    <br>
+    <h4 class=" title2 " style="position: sticky; top:0; text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px;"><b> View, approve optional disciplines and assign number of students  </b></h4>
+
+    <br>
+    <div>
+        <div style="position: relative; margin-left: 30px;
+        margin-right: 25px;">
+        <br>
+            <div style="max-height: 240px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 16px;">
+                        <th style="padding-right: 25px;">Name</th>
+                        <th style="padding-right: 25px;">Approve</th>
+                        <th style="padding-right: 25px;">Disapprove</th>
+                        <th> Number of students </th>
+                        
+                    </tr>
+
+                    <tbody id="addGradeSt">
+
+                        <tr *ngFor="let discipline of listWithDiscipline" >
+                            <td> {{discipline.discipline.name}}</td>
+                         
+                            <td>  <button type="submit"  class="btn-grad" (click)="setApprove(discipline.discipline.id)"  id="bind" > Approve </button></td>
+                            <td>  <button type="submit"  (click)="setDisapprove(discipline.discipline.id)" class="btn-grad" id="unbind"> Disapprove</button></td> 
+                            <td> <input type="text"  placeholder="value" style="width: 50px; margin-left: 25px;" [disabled]="discipline.approved?null:true"> </td>
+                        </tr>
+                       
+                    </tbody>
+
+                </table>
+                 
+
+                <br>
+                <br>
+               
+                
+            </div>
+            <br>
+            <br>
+            <div style="padding-left: 170px ;">
+                <!-- TODO: BUTONUL SA NU MAI FIE ENABLED -->
+            <button type="submit"  class="btn-grad"  id="submitButton" > Submit </button>
+            </div>
+            
+        </div>
+        
+     
+
+       
+
+        
+
+
+
+</div>
+
+
+
+
+<script>
+    function myFunction() {
+      document.getElementById("submitButton").disabled = true;
+    }
+    </script>
+    
