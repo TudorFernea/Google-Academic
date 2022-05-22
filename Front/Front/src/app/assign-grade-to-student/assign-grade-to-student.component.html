@@ -1,0 +1,87 @@
+
+<div class="Bara">
+    <div class="navBarLogo">
+        <img src="/assets/t2.png"  class="navBarPic">;
+    </div>
+    <i class="fa-solid fa-screen-users"></i>
+
+</div>
+<div class="ChenarSignUp"  >
+    <br>
+    <br>
+    <br>
+    <h1 class="title createAcc"> Assign grades to student </h1>
+    <br>
+    <div>
+        <div style="position: relative; margin-left: 180px;
+        margin-right: 25px;">
+        <br>
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 16px;">
+                        <th style="padding-right: 25px;">First Name</th>
+                        <th style="padding-right: 25px;">Last name</th>
+                        <th style="padding-right: 25px;">Group</th>
+                        <th style="padding-right: 25px;"> Grade</th>
+                        <th> Button </th>
+                        
+                    </tr>
+
+                    <tbody id="addGradeSt">
+
+                        <tr *ngFor="let student of students" >
+                            <td> {{student.nume}}</td>
+                            <td> {{student.prenume}}</td>
+                            <td> {{923}}</td>
+                             <td>  
+                                <p contenteditable="true">  </p> </td> 
+                                <td>  <button type="submit"  class="btn-grad">
+                                    Add 
+                    </button></td>
+                        </tr>
+                       
+                    </tbody>
+
+                </table>
+              
+                <br>
+                <br>
+                <!-- <div style="display: flex; align-content: row">
+                First Name                 Last Name   Grade
+                </div>  -->
+
+                
+            </div>
+
+            
+        </div>
+        
+      <!-- <form [formGroup]="insertGradeForm" class="inputLogin"> -->
+      
+                                <!-- <input type="text" class="inner" style="width: 4px" id="grade" name="grade" placeholder="Insert a grade..."  formControlName = "grade">
+                                <br>
+                                <br> -->
+    
+                            <!-- </form> -->
+                            
+                            <!-- <div class="parinteleButonului inner">
+                                <button type="submit"  class="btn-grad">
+                                Add 
+                                </button>
+                            </div> -->
+                            
+                        
+                         <!-- <div style="margin-left:20px">
+                              <input type="text" class="inner" style="width: 50px; " id="grade" name="grade" placeholder="Grade" formControlName = "grade">
+                        </div> -->
+
+       
+
+        
+
+
+
+</div>
+
+
+

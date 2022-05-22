@@ -1,0 +1,31 @@
+<div class="ChenarSignUp"  >
+    <br>
+    <br>
+    <h1 class="title createAcc"> Add optional course </h1>
+    <br>
+    <br>
+    <br>
+    <div>
+         <select id="discipline" (change)="changeDiscipline($event)">
+            <option value="0" disabled selected>Select your option</option>
+            <option *ngFor="let name of nameOfDisciplines" value="{{name}}">{{name}}</option>
+        </select>
+       
+       
+
+    </div>
+    
+    <div class="parinteleButonului">
+        <button type="submit" style="cursor: pointer"  class="btn-grad" routerLink="/assignGradeToStudent">
+           see students 
+        </button>
+    </div>
+   
+        
+
+
+
+</div>
+
+
+

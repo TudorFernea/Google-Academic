@@ -7,20 +7,22 @@
 </div> 
 
 <div class="Chenar">
-    <h4 class=" title2 "> Mandatory disciplines: </h4>
+    <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Mandatory disciplines </b></h4>
     <br>
      <div class=" chenarButoane " style="padding-bottom: 0%;">
 
-        <div> Year of study: {{yearOfStudy[currentId].year}} Specialization {{yearOfStudy[currentId].specializationName}}</div>
+        <div style="font-family: 'Fira Sans', sans-serif; text-align: center;" > Year of study: {{yearOfStudy[currentId].year}} Specialization: {{yearOfStudy[currentId].specializationName}}</div>
     </div>
 
     <br>
+    
 
     <div>
-        <div style="position: relative">
+        <div style="position: relative; margin-left: 25px;
+        margin-right: 25px;">
             <div style="max-height: 220px; overflow: auto;">
                 <table>
-                    <tr style="position: sticky; top:0; background-color: white;">
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
                         <th>Discipline</th>
                         <th>Curriculum</th>
                         
@@ -39,9 +41,13 @@
                 </table>
             </div>
         </div>
-        <div style="text-align: center">
-            <button routerLink="/seeOptionalDisciplinesPage">See optional disciplines</button>
+        <div class="parinteleButonului">
+            <button class="btn-grad"  style="cursor: pointer; width: 230px" routerLink="/seeOptionalDisciplinesPage">
+                See optional disciplines
+            </button>
         </div>
+
+      
         <br>
         <br>
         

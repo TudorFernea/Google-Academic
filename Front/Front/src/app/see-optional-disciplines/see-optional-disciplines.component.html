@@ -9,26 +9,29 @@
 </div> 
 
 <div class="Chenar">
-    <h4 class=" title2 "> Optional disciplines: </h4>
+    <h4 class=" title2" style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b>   Optional disciplines: </b></h4>
     <br>
     <div class=" chenarButoane " style="padding-bottom: 0%;">
 
-        <div>  Year of study: {{yearOfStudy[currentId].year}} Specialization {{yearOfStudy[currentId].specializationName}}</div>
+        <div style="font-family: 'Fira Sans', sans-serif; text-align: center;">  Year of study: {{yearOfStudy[currentId].year}} Specialization: {{yearOfStudy[currentId].specializationName}}</div>
     </div>
 
     <br>
 
-    
-         <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}}
-                
-            </div>
-          </div>
+    <div style="position: relative; margin-left: 25px; margin-right: 25px;">
         
-        <br>
-        <br> 
-        
-
-
+                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}}
+                        
+                </div>
     </div>
+            
+        
+       
+       
+  
+        
+
+
+</div>
 
