@@ -1,20 +1,16 @@
 
 
- <div class="Bara">
-   
-     <i class="fa-solid fa-screen-users"></i>
 
-</div> 
 
 <div class="Chenar">
     <br>
     <div style="text-align: center" id="outer">
            
-        <button class="btn-grad inner"   style="cursor: pointer; " (click)="getDisciplinesByYearOfStudy(1);getOptionalDisciplinesByYearOfStudy(1)" id="year1" [disabled]="this.yearOfStudy.length==0" >
+        <button class="btn-grad inner"   (click)="getDisciplinesByYearOfStudy(1);getOptionalDisciplinesByYearOfStudy(1)" id="year1" [disabled]="this.yearOfStudy.length==0" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;">
             Year 1
         </button>
         &nbsp;
-        <button class="btn-grad inner" style="cursor: pointer;" (click)="getDisciplinesByYearOfStudy(2);getOptionalDisciplinesByYearOfStudy(2)"  id="year2"  [disabled]="this.yearOfStudy.length<2" >
+        <button class="btn-grad inner" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="getDisciplinesByYearOfStudy(2);getOptionalDisciplinesByYearOfStudy(2)"  id="year2"  [disabled]="this.yearOfStudy.length<2" >
             Year 2
         </button>
         

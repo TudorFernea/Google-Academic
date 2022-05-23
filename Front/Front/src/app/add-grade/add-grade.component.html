@@ -1,12 +1,11 @@
 <div class="ChenarSignUp"  >
     <br>
     <br>
-    <h1 class="title createAcc"> Add optional course </h1>
+    <h1 class="title createAcc" style="font-family: 'Roboto Slab', serif;"> Add grade  </h1>
     <br>
-    <br>
-    <br>
-    <div>
-         <select id="discipline" (change)="changeDiscipline($event)">
+    
+    <div style="text-align: center;">
+         <select id="discipline" (change)="changeDiscipline($event)" style="font-family: 'Roboto Slab', serif;background-color: #268aef; color: white;border: 0; height: 25px;width: 170px; text-align: center;" >
             <option value="0" disabled selected>Select your option</option>
             <option *ngFor="let discipline of disciplines" value="{{discipline.id}}">{{discipline.name}}</option>
         </select>
@@ -14,9 +13,11 @@
        
 
     </div>
+    <br>
+    <br>
     
     <div class="parinteleButonului">
-        <button type="submit" style="cursor: pointer"  class="btn-grad" (click)="goToAssignGrade()">
+        <button type="submit" style="cursor: pointer"  class="btn-grad" (click)="goToAssignGrade()" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px;">
            see students 
         </button>
     </div>

@@ -47,3 +47,11 @@ export interface ApprovedOptional{
     id: number;
     noStudents: number;
 }
+export interface Result{
+    disciplineName: string;
+    averageGrade: number;
+}
+export interface Teacher{
+    id: number,
+    name: string
+}
