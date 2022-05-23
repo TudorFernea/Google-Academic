@@ -13,64 +13,8 @@ export class ViewAndApproveComponent implements OnInit {
   approveButton: boolean[]=[false,false,false,false];
   disapproveButon: boolean[]=[false,false,false,false];
 
-  listWithDiscipline: {discipline: Disciplines, approved: boolean, noStudents: number, aproveButton: boolean, disapproveButton:boolean, submitButton:boolean}[]=[
-    {discipline: {
-      id: 0,
-      name: "asc",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    approved: false,
-    noStudents: 0,
-    aproveButton: false,
-    disapproveButton: false,
-    submitButton: false
-    },
-    {discipline:{
-      id: 1,
-      name: "asc2",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    approved: false,
-    noStudents: 0,
-    aproveButton: false,
-    disapproveButton:false,
-    submitButton: false},
-    {discipline:{
-      id: 110,
-      name: "asc3",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    approved: false,
-    noStudents: 0,
-    aproveButton: false,
-    disapproveButton: false,
-    submitButton: false},
-    {discipline:{
-      id: 10,
-      name: "asc4",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    approved: false,
-    noStudents: 0,
-    aproveButton: false,
-    disapproveButton: false,
-    submitButton: false}
-
-
-  ]
-  optinalDisciplines: Disciplines[]=[
+  listWithDiscipline: OptionalApproval[]=[];
+  optinalDisciplines: Disciplines[]=[]
 
 
   approvedOptionals: ApprovedOptional[]=[]
@@ -97,7 +41,8 @@ export class ViewAndApproveComponent implements OnInit {
         let noStudents = 0;
         let aproveButton = false;
         let disapproveButton = false;
-        let approval:OptionalApproval = {discipline,approved,noStudents,aproveButton,disapproveButton};
+        let submitButton=false;
+        let approval:OptionalApproval = {discipline,approved,noStudents,aproveButton,disapproveButton,submitButton};
         this.listWithDiscipline.push(approval);
     }
     console.log(this.listWithDiscipline);
