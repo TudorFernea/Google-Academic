@@ -183,7 +183,7 @@ export class ViewAndApproveComponent implements OnInit {
       {
         this.listWithDiscipline[i].noStudents=noStud;
         this.listWithDiscipline[i].submitButton = true;
-
+        console.log(noStud);
       }
     }
 
