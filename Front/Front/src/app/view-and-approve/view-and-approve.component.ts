@@ -10,7 +10,7 @@ export class ViewAndApproveComponent implements OnInit {
   submitButtonDisabled: boolean = false;
   approveButton: boolean[]=[false,false,false,false];
   disapproveButon: boolean[]=[false,false,false,false];
-  listWithDiscipline: {discipline: Disciplines, approved: boolean, noStudents: number, aproveButton: boolean, disapproveButton:boolean}[]=[
+  listWithDiscipline: {discipline: Disciplines, approved: boolean, noStudents: number, aproveButton: boolean, disapproveButton:boolean, submitButton:boolean}[]=[
     {discipline: {
       id: 0,
       name: "asc",
@@ -22,7 +22,9 @@ export class ViewAndApproveComponent implements OnInit {
     approved: false,
     noStudents: 0,
     aproveButton: false,
-    disapproveButton: false},
+    disapproveButton: false,
+    submitButton: false
+    },
     {discipline:{
       id: 1,
       name: "asc2",
@@ -34,7 +36,8 @@ export class ViewAndApproveComponent implements OnInit {
     approved: false,
     noStudents: 0,
     aproveButton: false,
-    disapproveButton:false},
+    disapproveButton:false,
+    submitButton: false},
     {discipline:{
       id: 110,
       name: "asc3",
@@ -46,7 +49,8 @@ export class ViewAndApproveComponent implements OnInit {
     approved: false,
     noStudents: 0,
     aproveButton: false,
-    disapproveButton: false},
+    disapproveButton: false,
+    submitButton: false},
     {discipline:{
       id: 10,
       name: "asc4",
@@ -58,7 +62,8 @@ export class ViewAndApproveComponent implements OnInit {
     approved: false,
     noStudents: 0,
     aproveButton: false,
-    disapproveButton: false}
+    disapproveButton: false,
+    submitButton: false}
    
   
   ]
@@ -162,12 +167,26 @@ export class ViewAndApproveComponent implements OnInit {
     {this.listWithDiscipline[i].approved=false; 
       this.listWithDiscipline[i].noStudents=0; 
       this.listWithDiscipline[i].aproveButton=false;
-      this.listWithDiscipline[i].disapproveButton=true;}
+      this.listWithDiscipline[i].disapproveButton=true;
+      this.listWithDiscipline[i].submitButton=true;
+    }
 
   }
  
   myFunction() {
     this.submitButtonDisabled = true;
+  }
+  setNoStudents(disciplineid: number, noStud: number){
+    for(var i=0;i<this.listWithDiscipline.length;i++)
+    {
+      if(this.listWithDiscipline[i].discipline.id===disciplineid) 
+      {
+        this.listWithDiscipline[i].noStudents=noStud;
+        this.listWithDiscipline[i].submitButton = true;
+
+      }
+    }
+
   }
   
 
