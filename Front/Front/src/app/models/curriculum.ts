@@ -40,7 +40,8 @@ export interface OptionalApproval{
     approved: boolean, 
     noStudents: number, 
     aproveButton: boolean, 
-    disapproveButton:boolean
+    disapproveButton:boolean,
+    submitButton:boolean
 }
 
 export interface ApprovedOptional{

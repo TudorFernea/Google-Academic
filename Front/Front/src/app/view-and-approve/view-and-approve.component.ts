@@ -12,9 +12,13 @@ export class ViewAndApproveComponent implements OnInit {
   submitButtonDisabled: boolean = false;
   approveButton: boolean[]=[false,false,false,false];
   disapproveButon: boolean[]=[false,false,false,false];
+
   listWithDiscipline: OptionalApproval[]=[];
-  optinalDisciplines: Disciplines[]=[];
+  optinalDisciplines: Disciplines[]=[]
+
+
   approvedOptionals: ApprovedOptional[]=[]
+
 
   constructor(private teacherService: TeacherService, private authService: AuthService) { }
 
@@ -37,7 +41,8 @@ export class ViewAndApproveComponent implements OnInit {
         let noStudents = 0;
         let aproveButton = false;
         let disapproveButton = false;
-        let approval:OptionalApproval = {discipline,approved,noStudents,aproveButton,disapproveButton};
+        let submitButton=false;
+        let approval:OptionalApproval = {discipline,approved,noStudents,aproveButton,disapproveButton,submitButton};
         this.listWithDiscipline.push(approval);
     }
     console.log(this.listWithDiscipline);
@@ -45,23 +50,25 @@ export class ViewAndApproveComponent implements OnInit {
 
   setApprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-    if(this.listWithDiscipline[i].discipline.id===disciplineId) 
-    {this.listWithDiscipline[i].approved=true; 
+    if(this.listWithDiscipline[i].discipline.id===disciplineId)
+    {this.listWithDiscipline[i].approved=true;
       this.listWithDiscipline[i].aproveButton=true;
        this.listWithDiscipline[i].disapproveButton=false;}
 
-   
+
   }
   setDisapprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-    if(this.listWithDiscipline[i].discipline.id===disciplineId) 
-    {this.listWithDiscipline[i].approved=false; 
-      this.listWithDiscipline[i].noStudents=0; 
+    if(this.listWithDiscipline[i].discipline.id===disciplineId)
+    {this.listWithDiscipline[i].approved=false;
+      this.listWithDiscipline[i].noStudents=0;
       this.listWithDiscipline[i].aproveButton=false;
-      this.listWithDiscipline[i].disapproveButton=true;}
+      this.listWithDiscipline[i].disapproveButton=true;
+      this.listWithDiscipline[i].submitButton=true;
+    }
 
   }
-  
+
   assignOptionals(){
     for(var i=0;i<this.listWithDiscipline.length;i++)
       if(this.listWithDiscipline[i].approved!=false)
@@ -80,6 +87,18 @@ export class ViewAndApproveComponent implements OnInit {
     this.submitButtonDisabled = true;
     this.assignOptionals()
   }
-  
+  setNoStudents(disciplineid: number, noStud: number){
+    for(var i=0;i<this.listWithDiscipline.length;i++)
+    {
+      if(this.listWithDiscipline[i].discipline.id===disciplineid)
+      {
+        this.listWithDiscipline[i].noStudents=noStud;
+        this.listWithDiscipline[i].submitButton = true;
+        console.log(noStud);
+      }
+    }
+
+  }
+
 
 }
