@@ -54,5 +54,6 @@ export interface Result{
 }
 export interface Teacher{
     id: number,
-    name: string
+    name: string,
+    surname: string
 }

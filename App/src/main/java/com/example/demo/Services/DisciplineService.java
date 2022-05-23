@@ -40,7 +40,10 @@ public class DisciplineService {
     }
 
     public Double getAverageGrade(Discipline discipline){
-        return discipline.getGradeList().stream().mapToInt(Grade::getValue).average().orElseThrow();
+        if(discipline.getGradeList().size()>0)
+            return discipline.getGradeList().stream().mapToInt(Grade::getValue).average().orElseThrow();
+        else
+            return 0.0;
     }
 
     public Discipline getDisciplineWithBestResults(){

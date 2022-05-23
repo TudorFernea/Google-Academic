@@ -14,10 +14,10 @@ export class ViewAndApproveComponent implements OnInit {
   disapproveButon: boolean[]=[false,false,false,false];
 
   listWithDiscipline: OptionalApproval[]=[];
-  optinalDisciplines: Disciplines[]=[]
+  optinalDisciplines: Disciplines[]=[];
 
-
-  approvedOptionals: ApprovedOptional[]=[]
+  disapprovedOptionals: ApprovedOptional[]=[];
+  approvedOptionals: ApprovedOptional[]=[];
 
 
   constructor(private teacherService: TeacherService, private authService: AuthService) { }
@@ -54,8 +54,6 @@ export class ViewAndApproveComponent implements OnInit {
     {this.listWithDiscipline[i].approved=true;
       this.listWithDiscipline[i].aproveButton=true;
        this.listWithDiscipline[i].disapproveButton=false;}
-
-
   }
   setDisapprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
@@ -71,22 +69,33 @@ export class ViewAndApproveComponent implements OnInit {
 
   assignOptionals(){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-      if(this.listWithDiscipline[i].approved!=false)
+      if(this.listWithDiscipline[i].approved===true)
       {
-        let id = this.listWithDiscipline[i].discipline.id;
-        let noStudents = this.listWithDiscipline[i].noStudents;
-        let optional:ApprovedOptional={id, noStudents};
+        var id = this.listWithDiscipline[i].discipline.id;
+        var noStudents = this.listWithDiscipline[i].noStudents;
+        var optional:ApprovedOptional={id, noStudents};
         this.approvedOptionals.push(optional);
       }
-    this.teacherService.assignOptionals(this.approvedOptionals).subscribe(
-      ()=>alert("Assigned optionals")
+      else
+      {
+        var id = this.listWithDiscipline[i].discipline.id;
+        var noStudents = 0;
+        var optional:ApprovedOptional={id, noStudents};
+        this.disapprovedOptionals.push(optional);
+      }
+    this.teacherService.deleteDisapproved(this.disapprovedOptionals).subscribe(
+      ()=>  
+          this.teacherService.assignOptionals(this.approvedOptionals).subscribe(
+            ()=>alert("Assigned optionals")
+    )
     )
   }
 
   myFunction() {
     this.submitButtonDisabled = true;
-    this.assignOptionals()
+    this.assignOptionals();
   }
+
   setNoStudents(disciplineid: number, noStud: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
     {

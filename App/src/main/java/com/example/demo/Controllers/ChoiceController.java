@@ -53,6 +53,19 @@ public class ChoiceController {
         return true;
     }
 
+    @PostMapping("/deleteDisapproved")
+    public boolean deleteDisapproved(@RequestBody List<AssignDTO> list){
+        List<Discipline> disciplineList = new ArrayList<>();
+        list.stream()
+                .forEach(assignDTO -> {
+                    Discipline discipline = disciplineService.getDiscipline(assignDTO.getId());
+                    discipline.setMaxNoOfStudents(assignDTO.getNoStudents());
+                    disciplineList.add(discipline);
+                });
+        disciplineService.deleteAll(disciplineList);
+        return true;
+    }
+
     @PostMapping("/assign")
     public boolean assignOptionals(@RequestBody List<AssignDTO> list){
 
@@ -104,6 +117,7 @@ public class ChoiceController {
                                     });
 
                             discipline.setMaxNoOfStudents(number);
+                            disciplineService.addDiscipline(discipline);
                         }
                 );
         if(badChoices.size()>0)

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Disciplines, Teacher, YearOfStudy } from '../models/curriculum';
+import { TeacherService } from '../services/teacher.service';
+import { AuthService } from '../Servicies/auth.service';
 
 @Component({
   selector: 'app-view-discipline-given-by-teacher',
@@ -9,88 +11,21 @@ import { Disciplines, Teacher, YearOfStudy } from '../models/curriculum';
 export class ViewDisciplineGivenByTeacherComponent implements OnInit {
   yearOfStudyId!: number;
   teacherId!:number;
-  disciplines: Disciplines[]=[
-    {
-      id: 0,
-      name: "asc",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    {
-      id: 1,
-      name: "asc2",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia2",
-      curriculum: {id:1, text:"facem2 "}
-    },
-    {
-      id: 2,
-      name: "asc3",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: {id:2, text:"facem3 "}
-    },
-    {
-      id: 3,
-      name: "asc3",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: {id:3, text:"facem3 "}
-    },
-    {
-      id: 4,
-      name: "asc4",
-      optional: true,
-      credits: 2,
-      teacherName: "Emilia4",
-      curriculum: {id:4, text:"facem4 "}
-    }
+  disciplines: Disciplines[]=[];
+  yearOfStudy: YearOfStudy[]=[];
+    teachers: Teacher[]=[];
 
-  ];
-  yearOfStudy: YearOfStudy[]=[
-    {
-      id: 1,
-      year:1,
-      specializationName:" mate info 1"
-    },
-    {
-      id: 2,
-      year:2,
-      specializationName:" slcnsdjbc"
-    },]
-    teachers: Teacher[]=[
-     { id:1,
-      name: "iulia"},
-      {
-        id:2,
-      name: "iuliaaa"
-      },
-      {
-        id:3,
-      name: "iuliaaaaaa"
-      },
-      {
-        id:4,
-      name: "sharra"
-      },
-      {
-        id:5,
-      name: "tudor"
-      },
-      {
-        id:5,
-      name: "luana"
-      }
-    ];
-
-  constructor() { }
+  constructor(private teacherService: TeacherService, private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.teacherService.getAllYearOfStudyByTeacher(this.authService.getUsername()).subscribe(
+      years=>{
+        this.yearOfStudy=years
+      this.teacherService.getAllTeacherByFaculty(this.authService.getUsername()).subscribe(
+        teacherss=>this.teachers=teacherss
+      )
+      }
+    )
   }
   public changeYearOfStudy(e: any){
     this.yearOfStudyId=e.target.value;
@@ -106,8 +41,8 @@ export class ViewDisciplineGivenByTeacherComponent implements OnInit {
   }
   
   public changeTeacherName(e: any){
-    this.yearOfStudyId=e.target.value;
-    if (this.yearOfStudyId===undefined){
+    this.teacherId=e.target.value;
+    if (this.teacherId===undefined){
       // this.studentByDiscipline=[];
       // this.page=0;
     }
@@ -116,6 +51,12 @@ export class ViewDisciplineGivenByTeacherComponent implements OnInit {
     //     this.getStudentGradesByGroup(this.group,this.page);
     //     this.getnumberOfStudents(this.group);
     // }
+  }
+
+  public getDisciplines(){
+    this.teacherService.getDisciplinesByTeacherAndYear(this.yearOfStudyId, this.teacherId).subscribe(
+      discipline=>this.disciplines=discipline
+    )
   }
 
 }

@@ -64,7 +64,9 @@ public class Discipline {
     )
     private List<Grade> gradeList = new ArrayList<>();
 
-    @OneToOne(fetch=FetchType.LAZY)
+    @OneToOne(fetch=FetchType.LAZY,
+            cascade = CascadeType.ALL
+    )
     @JoinColumn(name = "curriculumId")
     private Curriculum curriculum;
 

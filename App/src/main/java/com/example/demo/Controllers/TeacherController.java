@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.DTOs.CurriculumDTO;
 import com.example.demo.DTOs.DisciplineDTO;
+import com.example.demo.DTOs.TeacherDTO;
 import com.example.demo.DTOs.YearOfStudyDTO;
 import com.example.demo.Models.Discipline;
 import com.example.demo.Models.Faculty;
@@ -41,6 +42,18 @@ public class TeacherController {
         return teacherService.findTeacherByUsername(username).getId();
     }
 
+    @GetMapping("/getAllByFaculty/{username}")
+    public List<TeacherDTO> getAllByFaculty(@PathVariable String username){
+        Teacher teacher = teacherService.findTeacherByUsername(username);
+        Faculty faculty = teacher.getTeacherFaculty();
+        return faculty.getTeacherList().stream()
+                .map(teacher1 -> new TeacherDTO(
+                        teacher1.getId(),
+                        teacher1.getFirstName(),
+                        teacher1.getLastName()
+                )).collect(Collectors.toList());
+    }
+
     @GetMapping("/getAllYearOfStudy/{username}")
     public List<YearOfStudyDTO> getAllYearOfStudy(@PathVariable String username){
 
@@ -78,5 +91,7 @@ public class TeacherController {
     {
         return this.teacherService.isTeacherOfDiscipline(teacher, discipline);
     }
+
+
 
 }

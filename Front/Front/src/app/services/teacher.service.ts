@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
-import { ApprovedOptional, Disciplines, Student, YearOfStudy } from '../models/curriculum';
+import { ApprovedOptional, Disciplines, Result, Student, Teacher, YearOfStudy } from '../models/curriculum';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +18,27 @@ export class TeacherService {
   constructor(
     private http: HttpClient,
   ) { }
+  
+  getDisciplinesByTeacherAndYear(yearOfStudyId: number, teacherId: number): Observable<Disciplines[]> {
+    const url = `${this.disciplineUrl}/getAllByTeacherAndYear/${yearOfStudyId}/${teacherId}`;
+    return this.http.get<Disciplines[]>(url);
+  }
+
+  getDisciplineWithBestResults():Observable<Result>{
+    const url = `${this.disciplineUrl}/bestresults`;
+    return this.http.get<Result>(url);
+  }
 
   getAllStudentByDiscipline(disciplineid: number):  Observable<Student[]>{
     const url = `${this.studentUrl}/studentsByDiscipline/${disciplineid}`;
     return this.http.post<Student[]>(url, disciplineid);
   }
   
+  getAllTeacherByFaculty(username:string):Observable<Teacher[]>{
+    const url=`${this.teacherUrl}/getAllByFaculty/${username}`;
+    return this.http.get<Teacher[]>(url);
+  }
+
   getAllYearOfStudy(): Observable<YearOfStudy[]>{
     const url = `${this.yearUrl}/getAll`;
     return this.http.get<YearOfStudy[]>(url);
@@ -58,6 +73,12 @@ export class TeacherService {
       const url = `${this.gradeUrl}/add`;
       return this.http.post<boolean>(url, {grade, disciplineId, studentId});
   }
+
+  deleteDisapproved(disapprovedOptionals:ApprovedOptional[]): Observable<boolean>{
+    const url=`${this.choiceUrl}/deleteDisapproved`;
+    console.log("asdasdasfds");
+    return this.http.post<boolean>(url, disapprovedOptionals);
+}
 
   assignOptionals(approvedOptionals:ApprovedOptional[]): Observable<boolean>{
       const url=`${this.choiceUrl}/assign`;

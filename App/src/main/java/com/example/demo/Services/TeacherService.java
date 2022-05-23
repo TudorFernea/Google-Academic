@@ -38,4 +38,8 @@ public class TeacherService {
     public Teacher findTeacherByUsername(String username){
         return teacherRepository.findTeacherByUsername(username);
     }
+
+    public Teacher findTeacherById(Integer teacherid) {
+        return teacherRepository.findTeacherById(teacherid);
+    }
 }

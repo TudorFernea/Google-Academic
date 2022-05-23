@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/BestResultDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/ListAssignDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/TeacherDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Filter/CustomAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Discipline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/TeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,18 +149,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java</url>
-          <line>109</line>
+          <line>123</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java</url>
-          <line>86</line>
+          <line>99</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java</url>
-          <line>108</line>
+          <line>122</line>
           <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

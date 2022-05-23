@@ -1,9 +1,6 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.DTOs.AddOptionalDTO;
-import com.example.demo.DTOs.CurriculumDTO;
-import com.example.demo.DTOs.DisciplineDTO;
-import com.example.demo.DTOs.YearOfStudyDTO;
+import com.example.demo.DTOs.*;
 import com.example.demo.Models.*;
 import com.example.demo.Services.CurriculumService;
 import com.example.demo.Services.DisciplineService;
@@ -68,8 +65,9 @@ public class DisciplineController {
     }*/
 
     @GetMapping("/bestresults")
-    public Discipline getDisciplineWithBestResults(){
-        return disciplineService.getDisciplineWithBestResults();
+    public BestResultDTO getDisciplineWithBestResults(){
+        Discipline discipline = disciplineService.getDisciplineWithBestResults();
+        return new BestResultDTO(discipline.getName(),disciplineService.getAverageGrade(discipline));
     }
 
     @PostMapping("/maxstudents/{nr}")
@@ -88,10 +86,21 @@ public class DisciplineController {
         return disciplineService.getDisciplineByTeacher(teacher);
     }
 
-    @PostMapping("/disciplinesByTeacherAndYearOfStudy")
-    public List<Discipline> getDisciplineByTeacherAndYearOfStudy(@RequestBody Teacher teacher, YearOfStudy yearOfStudy)
+    @GetMapping("/getAllByTeacherAndYear/{yearid}/{teacherid}")
+    public List<DisciplineDTO> getDisciplineByTeacherAndYearOfStudy(@PathVariable Integer yearid, @PathVariable Integer teacherid)
     {
-        return disciplineService.getDisciplineByYearOfStudyAndTeacher(yearOfStudy, teacher);
+        YearOfStudy yearOfStudy = this.yearOfStudyService.findYearOfStudy(yearid).get();
+        Teacher teacher = this.teacherService.findTeacherById(teacherid);
+        return disciplineService.getDisciplineByYearOfStudyAndTeacher(yearOfStudy, teacher)
+                .stream()
+                .filter(discipline -> !discipline.getOptional())
+                .map(discipline -> new DisciplineDTO(
+                        discipline.getId(),
+                        discipline.getName(),
+                        discipline.getOptional(),
+                        discipline.getNoOfCredits(),
+                        new CurriculumDTO(discipline.getCurriculum().getId(),discipline.getCurriculum().getText())
+                )).collect(Collectors.toList());
     }
 
     @PostMapping("/getMandatoryByYear")
