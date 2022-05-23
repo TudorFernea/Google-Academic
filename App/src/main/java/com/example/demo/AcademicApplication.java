@@ -87,29 +87,6 @@ public class AcademicApplication {
 			disciplineService.addDiscipline(discipline);
 			disciplineService.addDiscipline(optional);
 
-
-			/*
-			AcademicUser academicUser2 = new AcademicUser(null,"test.teacher","test","test.teacher@gmail.com","Test Teacher","5030303030303");
-			service.saveAcademicUser(academicUser2);
-
-			Teacher teacher = new Teacher(null, null, null);
-			service.saveTeacher(teacher);
-
-			service.assignUserToTeacher(academicUser2.getId(), teacher.getId());
-
-			AcademicUser academicUser3 = new AcademicUser(null,"test.head","test","test.head@gmail.com","Test Head","5040404040404");
-			service.saveAcademicUser(academicUser3);
-
-			Teacher teacher1 = new Teacher(null, null, null);
-			service.saveTeacher(teacher1);
-
-			TeacherType teacherType = new TeacherType(null, "HEAD_OF_DEPARTMENT");
-			service.saveTeacherType(teacherType);
-
-			service.assignTeacherTypeToTeacher(teacherType.getId(),teacher1.getId());
-			service.assignUserToTeacher(academicUser3.getId(), teacher1.getId());
-
-			 */
 		};
 	}
 }

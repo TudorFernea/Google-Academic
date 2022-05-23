@@ -28,13 +28,16 @@ export class AuthInterceptor implements HttpInterceptor {
         null
     );
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService) {
+        console.log("baaaa");
+    }
 
     intercept(
         request: HttpRequest<any>,
         next: HttpHandler
     ): Observable<HttpEvent<Object>> {
         let authReq = request;
+        console.log("baaaa");
         const token = AuthService.getAccessToken();
         if (token !== null) {
             authReq = this.addTokenHeader(request, token);
@@ -63,9 +66,7 @@ export class AuthInterceptor implements HttpInterceptor {
                   switchMap(() => {
                       this.isRefreshing = false;
                       this.refreshTokenSubject.next(AuthService.getAccessToken());
-                      
                       const accessToken=AuthService.getAccessToken();
-
                       return next.handle(
                           this.addTokenHeader(request, accessToken==null?undefined:accessToken)
                       );

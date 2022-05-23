@@ -41,9 +41,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().configurationSource(corsConfigurationSource());
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(STATELESS);
-        http.authorizeRequests().antMatchers("/login/**", "/home/refreshtoken/**", "/api/Registration/**","/api/Registration","/login","/enrolPage").permitAll();
-        http.authorizeRequests().antMatchers("/**").permitAll();
-        http.authorizeRequests().antMatchers(GET, "/home/users/**").hasAnyAuthority("STAFF");
+        http.authorizeRequests().antMatchers("/login/**", "/api/Registration/**","/api/Registration").permitAll();
+        //http.authorizeRequests().antMatchers("/**").permitAll();
+        //http.authorizeRequests().antMatchers(GET, "/home/users/**").hasAnyAuthority("STAFF");
+        http.authorizeRequests().antMatchers("/studentPage","/enrolPage","/viewCurriculumPage","/viewGradesPage","/yearOfStudy/getAll").hasAnyAuthority("STUDENT");
+        http.authorizeRequests().antMatchers("/teacherPage","/addDiscipline","/addGrade").hasAnyAuthority("TEACHER","CHIEF");
+        http.authorizeRequests().antMatchers("/chiefTeacherPage","/viewAndAprove","/seeStatistics","/viewDisciplineGivenByTeacher").hasAnyAuthority("CHIEF");
         http.authorizeRequests().anyRequest().authenticated();
         http.addFilter(new CustomAuthenticationFilter(authenticationManagerBean()));
         http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
@@ -55,9 +58,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
-    /**
-     * Configuration for CORS
-     */
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         List<String> allowOrigins = List.of("http://localhost:4200");

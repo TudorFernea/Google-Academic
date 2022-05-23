@@ -27,6 +27,8 @@ import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.com
 import { SeeStatisticsComponent } from './see-statistics/see-statistics.component';
 import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-by-teacher/view-discipline-given-by-teacher.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthGuard } from './guard/auth.guard';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
