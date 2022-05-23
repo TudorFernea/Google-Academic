@@ -1,0 +1,72 @@
+
+
+ <div class="Bara">
+   
+    <i class="fa-solid fa-screen-users"></i>
+
+</div> 
+
+<div class="Chenar">
+   <br>
+   <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 30px; margin: 0%; padding-top: 20px;"><b> See disciplines given by teacher </b></h4>
+<br>
+<br>
+   <div style="text-align: center" id="outer">
+          
+    <select id="discipline" (change)="changeYearOfStudy($event)" style="background-color: #268aef; color: white;border: 0; height: 20px; text-align: center;">
+        <option value="0" disabled selected>Select your option</option>
+        <option *ngFor="let year of yearOfStudy" value="{{year.id}}">Year: {{year.year}} Specialization: {{year.specializationName}}</option>
+    </select>
+       &nbsp;
+       <select id="teacher" (change)="changeTeacherName($event)" style="background-color: #268aef; color: white;border: 0; height: 20px; text-align: center;">
+        <option value="none" disabled selected>Select your option</option>
+        <option *ngFor="let teacher of teachers" value="{{teacher.id}}"> {{teacher.name}} </option>
+    </select>
+       
+   </div>
+
+
+
+    
+
+   <br>
+   
+
+   <div>
+       <div style="position: relative; margin-left: 25px;
+       margin-right: 25px;">
+           <div style="max-height: 220px; overflow: auto;">
+               <table>
+                   <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
+                       <th>Discipline name</th>
+                       <th>Number of credits</th>
+                       <th>Curriculum</th>
+                   </tr>
+
+                   <tbody id="disciplinesAndOptinals">
+
+                       <tr *ngFor="let discipline of disciplines">
+                           <td> {{discipline.name}}</td>
+                           <td> {{discipline.credits}}</td>
+                           <td> {{discipline.curriculum.text}}</td>
+                       </tr>
+                   </tbody>
+
+               </table>
+           </div>
+       </div>
+<br>
+      
+</div>
+   
+
+     
+       <br>
+       <br>
+       
+
+
+   
+
+</div>  
+

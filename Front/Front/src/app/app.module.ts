@@ -24,6 +24,8 @@ import { AddGradeComponent } from './add-grade/add-grade.component';
 import { AssignGradeToStudentComponent } from './assign-grade-to-student/assign-grade-to-student.component';
 import { ChiefTeacherPageComponent } from './chief-teacher-page/chief-teacher-page.component';
 import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.component';
+import { SeeStatisticsComponent } from './see-statistics/see-statistics.component';
+import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-by-teacher/view-discipline-given-by-teacher.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,9 @@ import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.com
     AddGradeComponent,
     AssignGradeToStudentComponent,
     ChiefTeacherPageComponent,
-    ViewAndApproveComponent
+    ViewAndApproveComponent,
+    SeeStatisticsComponent,
+    ViewDisciplineGivenByTeacherComponent
   ],
   imports: [
     BrowserModule,

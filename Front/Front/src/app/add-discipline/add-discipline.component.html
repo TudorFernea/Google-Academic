@@ -1,15 +1,21 @@
+<div class="Bara">
+    <i class="fa-solid fa-screen-users"></i>
+</div>
+<div class="mainPage">
 <div class="ChenarSignUp"  >
     <br>
     <br>
     <h1 class="title createAcc"> Add optional course </h1>
     <br>
-    <br>
-    <br>
-
-    <select id="discipline" (change)="changeYearOfStudy($event)">
-        <option value="0" disabled selected>Select your option</option>
+  
+    <div style="text-align: center;">
+    <select id="discipline" (change)="changeYearOfStudy($event)" style="background-color: #268aef; color: white;border: 0; height: 20px; text-align: center;" >
+        <option value="0" style="color: white" disabled selected>Select your option</option>
         <option *ngFor="let year of yearOfStudy" value="{{year.id}}">Year: {{year.year}} Specialization: {{year.specializationName}}</option>
     </select>
+    </div>
+    <br>
+   
     <div>
 
         <form [formGroup]="addDisciplineForm" class="inputLogin">
@@ -33,7 +39,7 @@
 
     </div>
     <br>
-        <div class="parinteleButonului">
+        <div class="parinteleButonului " style="text-align: center">
             <button type="submit"  class="btn-grad" (click)="addDiscipline()">
                Add 
             </button>

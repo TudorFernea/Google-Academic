@@ -29,3 +29,11 @@ export interface Student{
     lastName: string,
     group: string
 }
+export interface Result{
+    disciplineName: string;
+    averageGrade: number;
+}
+export interface Teacher{
+    id: number,
+    name: string
+}

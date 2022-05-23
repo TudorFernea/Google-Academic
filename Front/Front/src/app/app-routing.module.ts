@@ -16,6 +16,8 @@ import { AddGradeComponent } from './add-grade/add-grade.component';
 import { AssignGradeToStudentComponent } from './assign-grade-to-student/assign-grade-to-student.component';
 import { ChiefTeacherPageComponent } from './chief-teacher-page/chief-teacher-page.component';
 import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.component';
+import { SeeStatisticsComponent } from './see-statistics/see-statistics.component';
+import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-by-teacher/view-discipline-given-by-teacher.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -33,7 +35,9 @@ const routes: Routes = [
   {path: 'addGrade', component: AddGradeComponent},
   {path: 'assignGradeToStudent/:id', component: AssignGradeToStudentComponent},
   {path: 'chiefTeacherPage', component: ChiefTeacherPageComponent},
-  {path: 'viewAndAprove', component: ViewAndApproveComponent}
+  {path: 'viewAndAprove', component: ViewAndApproveComponent},
+  {path: 'seeStatistics', component: SeeStatisticsComponent},
+  {path: 'viewDisciplineGivenByTeacher', component: ViewDisciplineGivenByTeacherComponent}
 
 ];
 
