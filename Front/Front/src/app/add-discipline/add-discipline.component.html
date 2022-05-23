@@ -1,6 +1,4 @@
-<div class="Bara">
-    <i class="fa-solid fa-screen-users"></i>
-</div>
+
 <div class="mainPage">
 <div class="ChenarSignUp"  >
     <br>
@@ -9,10 +7,10 @@
     <br>
   
     <div style="text-align: center;">
-    <select id="discipline" (change)="changeYearOfStudy($event)" style="background-color: #268aef; color: white;border: 0; height: 20px; text-align: center;" >
-        <option value="0" style="color: white" disabled selected>Select your option</option>
-        <option *ngFor="let year of yearOfStudy" value="{{year.id}}">Year: {{year.year}} Specialization: {{year.specializationName}}</option>
-    </select>
+        <select id="discipline" (change)="changeYearOfStudy($event)" style="font-family: 'Roboto Slab', serif;background-color: #268aef; color: white;border: 0; height: 25px;  text-align: center;" >
+            <option value="0" style="color: white" disabled selected>Select your option</option>
+            <option *ngFor="let year of yearOfStudy" value="{{year.id}}">Year: {{year.year}} Specialization: {{year.specializationName}}</option>
+        </select>
     </div>
     <br>
    
@@ -40,7 +38,7 @@
     </div>
     <br>
         <div class="parinteleButonului " style="text-align: center">
-            <button type="submit"  class="btn-grad" (click)="addDiscipline()">
+            <button type="submit"  class="btn-grad" (click)="addDiscipline()" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px;">
                Add 
             </button>
         </div>

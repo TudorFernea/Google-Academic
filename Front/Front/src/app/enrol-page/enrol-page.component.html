@@ -1,10 +1,4 @@
-<div class="Bara">
-    <!-- <div class="navBarLogo">
-        <img src="/assets/t2.png"  class="navBarPic">;
-    </div> -->
-    <!-- <i class="fa-solid fa-screen-users"></i> -->
 
-</div>
 
 <div class="Chenar">
     <div class="inputLogin">
@@ -49,18 +43,18 @@
      
 
         <div class="parinteleButonului">
-            <button class="btn-grad"  style="cursor: pointer;" (click)="enrol()">
+            <button class="btn-grad"  style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="enrol()">
                 Enrol
             </button>
         </div>
             
         <div style="text-align: center" id="outer">
            
-            <button class="btn-grad inner"  style="cursor: pointer;" (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">
+            <button class="btn-grad inner"  style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">
                 Previous
             </button>
             &nbsp;
-            <button class="btn-grad inner"  style="cursor: pointer;" (click)="nextCurriculum()" id="nextButton"
+            <button class="btn-grad inner"  style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="nextCurriculum()" id="nextButton"
             [disabled]="currentId===yearOfStudy.length-1">
                 Next
             </button>

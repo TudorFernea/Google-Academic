@@ -1,11 +1,4 @@
 
-<div class="Bara">
-    <div class="navBarLogo">
-        <img src="/assets/t2.png"  class="navBarPic">;
-    </div>
-    <i class="fa-solid fa-screen-users"></i>
-
-</div>
 <div class="ChenarSignUp"  >
     <br>
     <br>
@@ -32,8 +25,8 @@
                         <tr *ngFor="let discipline of listWithDiscipline" >
                             <td> {{discipline.discipline.name}}</td>
                          
-                            <td>  <button type="submit"  class="btn-grad" (click)="setApprove(discipline.discipline.id)"  id="bind" [disabled]="discipline.aproveButton"> Approve </button></td>
-                            <td>  <button type="submit"  (click)="setDisapprove(discipline.discipline.id)" class="btn-grad" id="unbind" [disabled]="discipline.disapproveButton"> Disapprove</button></td> 
+                            <td>  <button type="submit"  class="btn-grad" (click)="setApprove(discipline.discipline.id)"  id="bind" [disabled]="discipline.aproveButton" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;"> Approve </button></td>
+                            <td>  <button type="submit"  (click)="setDisapprove(discipline.discipline.id)" class="btn-grad" id="unbind" [disabled]="discipline.disapproveButton" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;"> Disapprove</button></td> 
                             <td> <input type="text"  placeholder="value" style="width: 50px; margin-left: 25px;" [disabled]="discipline.approved?null:true"> </td>
                         </tr>
                        
@@ -51,7 +44,7 @@
             <br>
             <div style="padding-left: 170px ;">
                 <!-- TODO: BUTONUL SA NU MAI FIE ENABLED -->
-            <button type="submit"  class="btn-grad" (click)="myFunction()" id="submitButton" [disabled]="submitButtonDisabled"> Submit </button>
+            <button type="submit"  class="btn-grad" (click)="myFunction()" id="submitButton" [disabled]="submitButtonDisabled" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;"> Submit </button>
             </div>
             
         </div>

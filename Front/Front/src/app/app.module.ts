@@ -26,6 +26,8 @@ import { ChiefTeacherPageComponent } from './chief-teacher-page/chief-teacher-pa
 import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.component';
 import { SeeStatisticsComponent } from './see-statistics/see-statistics.component';
 import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-by-teacher/view-discipline-given-by-teacher.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,7 @@ import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-b
         skipWhenExpired: true
       }
     }),
+    FontAwesomeModule,
     
   ],
   exports:[RouterModule],

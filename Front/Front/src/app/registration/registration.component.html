@@ -1,4 +1,6 @@
+
 <div class="ChenarSignUp"  >
+    <br>
     <h1 class="title createAcc"> Create account </h1>
     <div>
 
@@ -31,16 +33,16 @@
         <form [formGroup]="positionForm" (ngSubmit)="signUpStudent()"  class="studentOrTeacherCheckbox">
             
             <input type="radio"  (change)="getRadioValue()" class="inputRadio" id="studentOption" name="position" value="student" formControlName="position" >
-            <label for="studentOption"> I'm a student</label><br>
+            <label for="studentOption"> Student</label><br>
             <input type="radio" (change)="getRadioValue()" id="teacherOption" name="position" value="teacher" class="inputRadio" formControlName="position">
-            <label for="teacherOption"> I'm a teacher</label>
+            <label for="teacherOption"> Teacher</label>
         </form>
 
 
     </div>
     <br>
         <div class="parinteleButonului">
-            <button type="submit" (click)="signUpStudent()" routerLink="/login" class="btn-grad">
+            <button type="submit" (click)="signUpStudent()" routerLink="/login" class="btn-grad" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;">
                 Sign up
             </button>
         </div>
