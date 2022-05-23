@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e8cee26-cc48-45ec-bb85-b7876b964d5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/AssignDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/GradeDisciplineDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/AcademicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/ChoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/DisciplineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/GradeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Controllers/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/AddOptionalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/DTOs/AddOptionalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Choice.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Choice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Faculty.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Models/Faculty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/ChoiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/ChoiceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/GradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Repositories/GradeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/ChoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/ChoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/DisciplineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/GradeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/example/demo/Services/SecurityService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +129,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

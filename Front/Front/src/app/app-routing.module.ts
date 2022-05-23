@@ -18,6 +18,11 @@ import { ChiefTeacherPageComponent } from './chief-teacher-page/chief-teacher-pa
 import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.component';
 import { SeeStatisticsComponent } from './see-statistics/see-statistics.component';
 import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-by-teacher/view-discipline-given-by-teacher.component';
+import { SignContractComponent } from './sign-contract/sign-contract.component';
+import { AdministrativeStuffComponent } from './administrative-stuff/administrative-stuff.component';
+import { PrintListStudentsComponent } from './print-list-students/print-list-students.component';
+import { ViewResultsStudentsComponent } from './view-results-students/view-results-students.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -37,7 +42,12 @@ const routes: Routes = [
   {path: 'chiefTeacherPage', component: ChiefTeacherPageComponent},
   {path: 'viewAndAprove', component: ViewAndApproveComponent},
   {path: 'seeStatistics', component: SeeStatisticsComponent},
-  {path: 'viewDisciplineGivenByTeacher', component: ViewDisciplineGivenByTeacherComponent}
+  {path: 'viewDisciplineGivenByTeacher', component: ViewDisciplineGivenByTeacherComponent},
+  {path: 'signContractPage', component: SignContractComponent},
+  {path: 'administrativeStuff', component: AdministrativeStuffComponent},
+  {path: 'printListStudents', component: PrintListStudentsComponent},
+  {path: 'viewResultsStudents', component: ViewResultsStudentsComponent},
+  {path: 'updateProfile', component: UpdateProfileComponent}
 
 ];
 

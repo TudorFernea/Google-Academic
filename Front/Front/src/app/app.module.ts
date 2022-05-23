@@ -27,6 +27,11 @@ import { ViewAndApproveComponent } from './view-and-approve/view-and-approve.com
 import { SeeStatisticsComponent } from './see-statistics/see-statistics.component';
 import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-by-teacher/view-discipline-given-by-teacher.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignContractComponent } from './sign-contract/sign-contract.component';
+import { AdministrativeStuffComponent } from './administrative-stuff/administrative-stuff.component';
+import { PrintListStudentsComponent } from './print-list-students/print-list-students.component';
+import { ViewResultsStudentsComponent } from './view-results-students/view-results-students.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ChiefTeacherPageComponent,
     ViewAndApproveComponent,
     SeeStatisticsComponent,
-    ViewDisciplineGivenByTeacherComponent
+    ViewDisciplineGivenByTeacherComponent,
+    SignContractComponent,
+    AdministrativeStuffComponent,
+    PrintListStudentsComponent,
+    ViewResultsStudentsComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

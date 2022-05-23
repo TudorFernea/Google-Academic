@@ -1,0 +1,36 @@
+
+<div class="ChenarSignUp"  >
+    <br>
+
+    <h1 class="title createAcc"> Update account </h1>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+
+        <form class="inputLogin">
+
+           
+
+            <input type="text" #firstName id="surnameSignUp" name="surnameSignUp" placeholder="First Name" >
+            <br>
+            <br>
+            <input type="text" #lastName id="usernameSignUp" name="usernameSignUp" placeholder="Last Name" >
+            <br>
+            <br>
+        </form>
+
+    </div>
+    <br>
+        <div class="parinteleButonului">
+            <button type="submit" (click)="updateProfile(firstName.value, lastName.value)" routerLink="/login" class="btn-grad" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;">
+                Sign up
+            </button>
+        </div>
+
+        
+
+
+
+</div>
+
