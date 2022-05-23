@@ -25,7 +25,7 @@
                         <tr *ngFor="let discipline of listWithDiscipline" >
                             <td> {{discipline.discipline.name}}</td>
                          
-                            <td>  <button type="submit"  class="btn-grad" (click)="setApprove(discipline.discipline.id)"  id="bind" [disabled]="discipline.aproveButton" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;"> Approve </button></td>
+                            <td>  <button type="submit"  class="btn-grad" (click)="setApprove(discipline.discipline.id)"  id="bind" [disabled]="discipline.aproveButton" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer; width: 50px;"> Approve </button></td>
                             <td>  <button type="submit"  (click)="setDisapprove(discipline.discipline.id)" class="btn-grad" id="unbind" [disabled]="discipline.disapproveButton" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;"> Disapprove</button></td> 
                             <td> <input type="text"  placeholder="value" style="width: 50px; margin-left: 25px;" [disabled]="discipline.approved?null:true"> </td>
                         </tr>
