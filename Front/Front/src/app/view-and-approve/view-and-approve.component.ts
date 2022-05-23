@@ -7,7 +7,10 @@ import { Disciplines, Grade, YearOfStudy } from '../models/curriculum';
   styleUrls: ['./view-and-approve.component.css']
 })
 export class ViewAndApproveComponent implements OnInit {
-  listWithDiscipline: {discipline: Disciplines, approved: boolean, noStudents: number}[]=[
+  submitButtonDisabled: boolean = false;
+  approveButton: boolean[]=[false,false,false,false];
+  disapproveButon: boolean[]=[false,false,false,false];
+  listWithDiscipline: {discipline: Disciplines, approved: boolean, noStudents: number, aproveButton: boolean, disapproveButton:boolean}[]=[
     {discipline: {
       id: 0,
       name: "asc",
@@ -17,9 +20,11 @@ export class ViewAndApproveComponent implements OnInit {
       curriculum: {id:0, text:"facem "}
     },
     approved: false,
-    noStudents: 0},
+    noStudents: 0,
+    aproveButton: false,
+    disapproveButton: false},
     {discipline:{
-      id: 0,
+      id: 1,
       name: "asc2",
       optional: true,
       credits: 7,
@@ -27,9 +32,11 @@ export class ViewAndApproveComponent implements OnInit {
       curriculum: {id:0, text:"facem "}
     },
     approved: false,
-    noStudents: 0},
+    noStudents: 0,
+    aproveButton: false,
+    disapproveButton:false},
     {discipline:{
-      id: 0,
+      id: 110,
       name: "asc3",
       optional: true,
       credits: 7,
@@ -37,9 +44,11 @@ export class ViewAndApproveComponent implements OnInit {
       curriculum: {id:0, text:"facem "}
     },
     approved: false,
-    noStudents: 0},
+    noStudents: 0,
+    aproveButton: false,
+    disapproveButton: false},
     {discipline:{
-      id: 0,
+      id: 10,
       name: "asc4",
       optional: true,
       credits: 7,
@@ -47,14 +56,16 @@ export class ViewAndApproveComponent implements OnInit {
       curriculum: {id:0, text:"facem "}
     },
     approved: false,
-    noStudents: 0}
+    noStudents: 0,
+    aproveButton: false,
+    disapproveButton: false}
    
   
   ]
   optinalDisciplines: Disciplines[]=[
 
     {
-      id: 0,
+      id: 11110,
       name: "asc",
       optional: true,
       credits: 7,
@@ -62,7 +73,7 @@ export class ViewAndApproveComponent implements OnInit {
       curriculum: {id:0, text:"facem "}
     },
     {
-      id: 1,
+      id: 11111,
       name: "asc2",
       optional: true,
       credits: 7,
@@ -138,17 +149,26 @@ export class ViewAndApproveComponent implements OnInit {
   }
   setApprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-    if(this.listWithDiscipline[i].discipline.id===disciplineId) this.listWithDiscipline[i].approved=true;
+    if(this.listWithDiscipline[i].discipline.id===disciplineId) 
+    {this.listWithDiscipline[i].approved=true; 
+      this.listWithDiscipline[i].aproveButton=true;
+       this.listWithDiscipline[i].disapproveButton=false;}
 
    
   }
   setDisapprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-    if(this.listWithDiscipline[i].discipline.id===disciplineId) {this.listWithDiscipline[i].approved=false; 
-      this.listWithDiscipline[i].noStudents=0;}
+    if(this.listWithDiscipline[i].discipline.id===disciplineId) 
+    {this.listWithDiscipline[i].approved=false; 
+      this.listWithDiscipline[i].noStudents=0; 
+      this.listWithDiscipline[i].aproveButton=false;
+      this.listWithDiscipline[i].disapproveButton=true;}
 
   }
  
+  myFunction() {
+    this.submitButtonDisabled = true;
+  }
   
 
 }

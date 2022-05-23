@@ -58,6 +58,11 @@ export class ViewGradesComponent implements OnInit {
       year:1,
       specializationName:" mate info 1"
     },
+    {
+      id: 2,
+      year:2,
+      specializationName:" slcnsdjbc"
+    },
     
 
   ];

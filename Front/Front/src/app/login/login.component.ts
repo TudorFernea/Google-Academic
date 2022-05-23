@@ -33,10 +33,10 @@ export class LoginComponent {
   })
 
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private registerService: RegisterService,
     private signUpService: SignUpService,
-    private authService: AuthService) { 
+    private authService: AuthService) {
   }
 
 
@@ -62,7 +62,7 @@ export class LoginComponent {
     }
     else //if(this.validateEmail(this.loginForm.controls["email"].value)  && this.validatePassword(this.loginForm.controls["password"].value))
       this.authService.loginUser(this.loginForm.controls["email"].value, this.loginForm.controls["password"].value).subscribe(
-        ()=> 
+        ()=>
           {
             const role = this.authService.getRoles();
             if (role == "STUDENT")
@@ -88,7 +88,7 @@ export class LoginComponent {
 
   public signUpStudent(){
       // console.log(this.positionForm.controls["position"].value);
-      
+
       this.signUpService.signUp(
       this.signUpForm.controls["name"].value,
       this.signUpForm.controls["surname"].value,
@@ -99,13 +99,13 @@ export class LoginComponent {
        this.getRadioValue()
        ).subscribe(
         response => {
-          
+
           console.log(response);
           if(response){
             alert("Registered succesfully");
             this.router.navigateByUrl('/');
-           
-          } 
+
+          }
         }
        )
       }
@@ -117,5 +117,5 @@ export class LoginComponent {
     if(password!==confPassword) alert("Passwords should be the same");
 
   }
-  
+
 }

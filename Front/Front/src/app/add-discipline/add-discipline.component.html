@@ -5,6 +5,11 @@
     <br>
     <br>
     <br>
+
+    <select id="discipline" (change)="changeYearOfStudy($event)">
+        <option value="0" disabled selected>Select your option</option>
+        <option *ngFor="let year of yearOfStudy" value="{{year.id}}">Year: {{year.year}} Specialization: {{year.specializationName}}</option>
+    </select>
     <div>
 
         <form [formGroup]="addDisciplineForm" class="inputLogin">

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TeacherService } from '../services/teacher.service';
 import { AuthService } from '../Servicies/auth.service';
+import { YearOfStudy } from '../models/curriculum';
 
 @Component({
   selector: 'app-add-discipline',
@@ -9,7 +10,7 @@ import { AuthService } from '../Servicies/auth.service';
   styleUrls: ['./add-discipline.component.css']
 })
 export class AddDisciplineComponent implements OnInit {
-  
+  yearOfStudyId!: number;
   addDisciplineForm= new FormGroup({
     name: new FormControl(''),
     credits : new FormControl(''),
@@ -17,8 +18,31 @@ export class AddDisciplineComponent implements OnInit {
   })
 
   constructor(private teacherService: TeacherService, private authService: AuthService) { }
+  yearOfStudy: YearOfStudy[]=[
+    {
+      id: 1,
+      year:1,
+      specializationName:" mate info 1"
+    },
+    {
+      id: 2,
+      year:2,
+      specializationName:" slcnsdjbc"
+    },]
 
   ngOnInit(): void {
+  }
+  public changeYearOfStudy(e: any){
+    this.yearOfStudyId=e.target.value;
+    if (this.yearOfStudyId===undefined){
+      // this.studentByDiscipline=[];
+      // this.page=0;
+    }
+    // else{
+    //   this.page=0;
+    //     this.getStudentGradesByGroup(this.group,this.page);
+    //     this.getnumberOfStudents(this.group);
+    // }
   }
 
   addDiscipline(){
