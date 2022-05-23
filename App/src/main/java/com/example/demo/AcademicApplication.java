@@ -23,20 +23,33 @@ public class AcademicApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(SecurityService securityService, UserService userService, StudentService studentService, TeacherService teacherService, YearOfStudyService yearOfStudyService, SpecializationService specializationService, DisciplineService disciplineService, CurriculumService curriculumService){
+	CommandLineRunner run(SecurityService securityService, StudentService studentService, TeacherService teacherService, YearOfStudyService yearOfStudyService, SpecializationService specializationService, DisciplineService disciplineService, CurriculumService curriculumService, FacultyService facultyService){
 		return args -> {
 			//User user =  new User("user1","1234","test@gmail.com","ion","pop");
 			//userService.addUser(user);
 
+			Faculty faculty = new Faculty("matematica informatica");
+			facultyService.addFaculty(faculty);
+
 			Student student = new Student("user1","1234","test@gmail.com","ion","pop", "923");
+			Student student2 = new Student("user4","1234","test@gmail.com","ana","pop", "923");
+			studentService.addStudent(student2);
 			studentService.addStudent(student);
 			securityService.addUser(student);
+			securityService.addUser(student2);
 
 			Teacher teacher = new Teacher("user2","1234","test@gmail.com","abcd","pop", false);
+			Teacher chief = new Teacher("user3","1234","test@gmail.com","mr","chief", true);
+			teacher.setTeacherFaculty(faculty);
+			chief.setTeacherFaculty(faculty);
 			teacherService.addTeacher(teacher);
+			teacherService.addTeacher(chief);
 			securityService.addUser(teacher);
+			securityService.addUser(chief);
+
 
 			Specialization specialization = new Specialization("mate info","engleza");
+			specialization.setSpecializationFaculty(faculty);
 			specializationService.addSpecialization(specialization);
 
 			YearOfStudy yearOfStudy = new YearOfStudy(1, specialization);
@@ -45,7 +58,9 @@ public class AcademicApplication {
 			YearOfStudy yearOfStudy2 = new YearOfStudy(2, specialization);
 			yearOfStudyService.addYearOfStudy(yearOfStudy2);
 			student.setYearOfStudy1(yearOfStudy);
+			student2.setYearOfStudy1(yearOfStudy);
 			studentService.addStudent(student);
+			studentService.addStudent(student2);
 
 			Discipline discipline = new Discipline("asc",false, 10);
 			Discipline optional = new Discipline("fp",true, 2);

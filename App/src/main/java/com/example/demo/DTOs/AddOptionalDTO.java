@@ -11,11 +11,13 @@ public class AddOptionalDTO {
 
     private Integer nrcredit;
     private String description;
+    private Integer yearOfStudyId;
 
-    public AddOptionalDTO(String username, String name, Integer noOfCredits, String description) {
+    public AddOptionalDTO(String username, String name, Integer noOfCredits, String description, Integer yearOfStudyId) {
         this.username = username;
         this.name = name;
         this.nrcredit = noOfCredits;
         this.description = description;
+        this.yearOfStudyId = yearOfStudyId;
     }
 }

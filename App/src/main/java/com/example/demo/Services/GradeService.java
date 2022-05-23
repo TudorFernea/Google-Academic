@@ -28,6 +28,10 @@ public class GradeService {
         return gradeRepository.findGradeByStudent(student);
     }
 
+    public List<Grade> getGradesByStudentAndDiscipline(Student student, Discipline discipline){
+        return gradeRepository.findGradeByStudentAndDiscipline(student, discipline);
+    }
+
     //TODO: Added by Luana on 18.05
     public Double getProfessionalResults() {
 

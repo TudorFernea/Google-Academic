@@ -12,6 +12,7 @@ import com.example.demo.Services.YearOfStudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -31,6 +32,7 @@ public class DisciplineController {
         this.yearOfStudyService = yearOfStudyService;
         this.teacherService = teacherService;
         this.curriculumService = curriculumService;
+
     }
 
     @GetMapping
@@ -45,10 +47,14 @@ public class DisciplineController {
 
     @PostMapping("/addOptional")
     public boolean addDiscipline(@RequestBody AddOptionalDTO addOptionalDTO) {
+
+        YearOfStudy yearOfStudy = yearOfStudyService.findYearOfStudy(addOptionalDTO.getYearOfStudyId()).get();
+
         Curriculum curriculum = new Curriculum(addOptionalDTO.getDescription());
         curriculumService.addCurriculum(curriculum);
         Teacher teacher = teacherService.findTeacherByUsername(addOptionalDTO.getUsername());
         Discipline discipline = new Discipline(addOptionalDTO.getName(), true,addOptionalDTO.getNrcredit(), curriculum, teacher);
+        discipline.setYearOfStudy(yearOfStudy);
         disciplineService.addDiscipline(discipline);
         return true;
     }
@@ -121,4 +127,34 @@ public class DisciplineController {
                         new CurriculumDTO(discipline.getCurriculum().getId(),discipline.getCurriculum().getText())
                 )).collect(Collectors.toList());
     }
+
+    @GetMapping("/getOptionalByFaculty/{username}")
+    public List<DisciplineDTO> getOptionalDisciplineByFaculty(@PathVariable String username)
+    {
+        Teacher teacher = teacherService.findTeacherByUsername(username);
+        Faculty faculty = teacher.getTeacherFaculty();
+        List<YearOfStudy> yearOfStudyList = new ArrayList<>();
+
+        faculty.getSpecializationList().stream()
+                .forEach(specialization -> yearOfStudyList.addAll(specialization.getYearOfStudyList()));
+
+        List<DisciplineDTO> optional = new ArrayList<>();
+
+        yearOfStudyList.stream()
+                .forEach(yearOfStudy -> optional.addAll(disciplineService.getDisciplineByYearOfStudy(yearOfStudy)
+                        .stream()
+                        .filter(discipline -> discipline.getOptional())
+                        .map(discipline -> new DisciplineDTO(
+                                discipline.getId(),
+                                discipline.getName(),
+                                discipline.getOptional(),
+                                discipline.getNoOfCredits(),
+                                new CurriculumDTO(discipline.getCurriculum().getId(),discipline.getCurriculum().getText())
+                        )).collect(Collectors.toList()))
+                );
+
+        return optional;
+    }
+
+
 }

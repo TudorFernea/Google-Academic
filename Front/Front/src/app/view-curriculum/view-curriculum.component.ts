@@ -14,6 +14,7 @@ export class ViewCurriculumComponent implements OnInit {
 
   disciplines: Disciplines[]=[];
   yearOfStudy: YearOfStudy[]=[];
+  //choices: Choice[]=[];
   currentId: number = 0;
   optionalDisciplines: Disciplines[]=[];
   constructor(private enrolService: EnrolService,private authService: AuthService) {}
@@ -47,8 +48,16 @@ export class ViewCurriculumComponent implements OnInit {
     if(this.disciplines[i].optional==false){this.mandatoryDiscipline.push(this.disciplines[i])}
 
   }*/
+
+  updateChoices(){
+    this.enrolService.updateChoices(this.authService.getUsername(), this.optionalDisciplines).subscribe(
+      ()=>alert("Updated")
+    )
+  }
+
   drop(event: CdkDragDrop<Disciplines[]>) {
-    moveItemInArray(this.disciplines, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.optionalDisciplines, event.previousIndex, event.currentIndex);
+    this.updateChoices();
   }
   
   isDragDrop(object: any): object is CdkDragDrop<string[]> {

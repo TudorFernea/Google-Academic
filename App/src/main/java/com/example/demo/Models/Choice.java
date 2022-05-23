@@ -1,9 +1,14 @@
 package com.example.demo.Models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity(name = "Choice")
 @Table(name = "choice")
+@Getter
+@Setter
 public class Choice {
 
     public Choice() {
@@ -36,6 +41,7 @@ public class Choice {
     private Discipline discipline;
 
     private Integer choiceOrder;
+    private boolean verified=false;
 
 
     public Integer getId() {

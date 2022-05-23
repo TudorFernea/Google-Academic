@@ -12,11 +12,11 @@
     <div class=" chenarButoane " style="padding-bottom: 0%;">
         <div style="text-align: center" id="outer">
            
-            <button class="btn-grad inner"   style="cursor: pointer; "  id="year1" [disabled]="this.yearOfStudy.length==0" >
+            <button class="btn-grad inner"   style="cursor: pointer; "  id="year1" [disabled]="this.yearOfStudy.length==0" (click)="getCurrentYear(1);getGrades()" >
                 Year 1
             </button>
             &nbsp;
-            <button class="btn-grad inner" style="cursor: pointer;"   id="year2"  [disabled]="this.yearOfStudy.length<2" >
+            <button class="btn-grad inner" style="cursor: pointer;"   id="year2"  [disabled]="this.yearOfStudy.length<2" (click)="getCurrentYear(2);getGrades()">
                 Year 2
             </button>
             
