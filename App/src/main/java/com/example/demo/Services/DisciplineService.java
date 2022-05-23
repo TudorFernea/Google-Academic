@@ -68,4 +68,8 @@ public class DisciplineService {
     public Discipline getDiscipline(Integer id) {
         return disciplineRepository.findDisciplineById(id);
     }
+
+    public void deleteAll(List<Discipline> list){
+        disciplineRepository.deleteAll(list);
+    }
 }

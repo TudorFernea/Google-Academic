@@ -29,6 +29,24 @@ export interface Student{
     lastName: string,
     group: string
 }
+
+export interface GradeDiscipline{
+    disciplineName: string, 
+    disciplineGrade: number
+}
+
+export interface OptionalApproval{
+    discipline: Disciplines, 
+    approved: boolean, 
+    noStudents: number, 
+    aproveButton: boolean, 
+    disapproveButton:boolean
+}
+
+export interface ApprovedOptional{
+    id: number;
+    noStudents: number;
+}
 export interface Result{
     disciplineName: string;
     averageGrade: number;

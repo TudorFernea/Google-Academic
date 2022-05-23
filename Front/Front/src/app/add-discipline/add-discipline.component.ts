@@ -18,19 +18,10 @@ export class AddDisciplineComponent implements OnInit {
   })
 
   constructor(private teacherService: TeacherService, private authService: AuthService) { }
-  yearOfStudy: YearOfStudy[]=[
-    {
-      id: 1,
-      year:1,
-      specializationName:" mate info 1"
-    },
-    {
-      id: 2,
-      year:2,
-      specializationName:" slcnsdjbc"
-    },]
+  yearOfStudy: YearOfStudy[]=[]
 
   ngOnInit(): void {
+    this.getAllYearOfStudyByTeacher();
   }
   public changeYearOfStudy(e: any){
     this.yearOfStudyId=e.target.value;
@@ -45,12 +36,19 @@ export class AddDisciplineComponent implements OnInit {
     // }
   }
 
+  getAllYearOfStudyByTeacher(){ //intri pe pagina, se apeleaza asta
+    this.teacherService.getAllYearOfStudyByTeacher(this.authService.getUsername()).subscribe(
+      allYear=>this.yearOfStudy=allYear
+    )
+  }
+
   addDiscipline(){
       this.teacherService.addDiscipline(
         this.addDisciplineForm.controls["name"].value,
         Number(this.addDisciplineForm.controls["credits"].value),
         this.addDisciplineForm.controls["curriculum"].value,
-        this.authService.getUsername()
+        this.authService.getUsername(),
+        this.yearOfStudyId
       ).subscribe(
         ()=>alert("Optional added successfully")
       );

@@ -18,6 +18,10 @@ import java.util.List;
 @NoArgsConstructor
 public class Faculty{
 
+    public Faculty(String name) {
+        this.name = name;
+    }
+
     @Id
     @SequenceGenerator(
             name = "faculty_sequence",

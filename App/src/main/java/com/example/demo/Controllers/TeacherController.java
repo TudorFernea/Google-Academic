@@ -2,12 +2,16 @@ package com.example.demo.Controllers;
 
 import com.example.demo.DTOs.CurriculumDTO;
 import com.example.demo.DTOs.DisciplineDTO;
+import com.example.demo.DTOs.YearOfStudyDTO;
 import com.example.demo.Models.Discipline;
+import com.example.demo.Models.Faculty;
 import com.example.demo.Models.Teacher;
+import com.example.demo.Models.YearOfStudy;
 import com.example.demo.Services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,6 +39,25 @@ public class TeacherController {
     @PostMapping("/get/{username}")
     public Integer getTeacher(@PathVariable String username){
         return teacherService.findTeacherByUsername(username).getId();
+    }
+
+    @GetMapping("/getAllYearOfStudy/{username}")
+    public List<YearOfStudyDTO> getAllYearOfStudy(@PathVariable String username){
+
+        Teacher teacher = teacherService.findTeacherByUsername(username);
+        Faculty faculty = teacher.getTeacherFaculty();
+        List<YearOfStudy> yearOfStudyList = new ArrayList<>();
+
+        faculty.getSpecializationList().stream()
+                .forEach(specialization -> yearOfStudyList.addAll(specialization.getYearOfStudyList()));
+
+        return yearOfStudyList.stream()
+                .map(yearOfStudy -> new YearOfStudyDTO(
+                        yearOfStudy.getId(),
+                        yearOfStudy.getYear(),
+                        yearOfStudy.getSpecialization().getName()
+                )).collect(Collectors.toList());
+
     }
 
     @PostMapping("/getAllDiscipline/{username}")

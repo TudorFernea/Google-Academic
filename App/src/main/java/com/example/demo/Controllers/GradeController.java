@@ -1,31 +1,41 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.DTOs.GradeDTO;
+import com.example.demo.DTOs.GradeDisciplineDTO;
+import com.example.demo.DTOs.YearOfStudyDTO;
 import com.example.demo.Models.Discipline;
 import com.example.demo.Models.Grade;
 import com.example.demo.Models.Student;
+import com.example.demo.Models.YearOfStudy;
 import com.example.demo.Services.DisciplineService;
 import com.example.demo.Services.GradeService;
 import com.example.demo.Services.StudentService;
+import com.example.demo.Services.YearOfStudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Struct;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController("GradeController")
 @RequestMapping(value="api/grade")
 public class GradeController {
+
     private final GradeService gradeService;
     private final StudentService studentService;
     private final DisciplineService disciplineService;
+    private final YearOfStudyService yearOfStudyService;
 
 
     @Autowired
-    public GradeController(GradeService gradeService, StudentService studentService, DisciplineService disciplineService) {
+    public GradeController(GradeService gradeService, StudentService studentService, DisciplineService disciplineService, YearOfStudyService yearOfStudyService) {
         this.gradeService = gradeService;
         this.studentService = studentService;
         this.disciplineService = disciplineService;
+        this.yearOfStudyService = yearOfStudyService;
     }
 
     @GetMapping(value="/bystudent") // view grades
@@ -48,5 +58,25 @@ public class GradeController {
     public void getProfessionalResults() {
         gradeService.getProfessionalResults();
         System.out.println("Service function was called");
+    }
+
+    @PostMapping("/getByYear/{username}")
+    public List<GradeDisciplineDTO> getGradesByYearOfStudy(@RequestBody YearOfStudyDTO yearOfStudyDTO, @PathVariable String username){
+
+        YearOfStudy yearOfStudy = this.yearOfStudyService.findYearOfStudy(yearOfStudyDTO.getId()).get();
+        Student student = this.studentService.findByUsername(username);
+        List<Grade> gradeList = new ArrayList<Grade>();
+
+        List<Discipline> list = this.disciplineService.getDisciplineByYearOfStudy(yearOfStudy);
+        list.stream()
+                .forEach(discipline -> {
+                    gradeList.addAll(this.gradeService.getGradesByStudentAndDiscipline(student,discipline));
+                });
+
+        return gradeList.stream()
+                .map(grade -> new GradeDisciplineDTO(
+                        grade.getValue(),
+                        grade.getDiscipline().getName()
+                )).collect(Collectors.toList());
     }
 }

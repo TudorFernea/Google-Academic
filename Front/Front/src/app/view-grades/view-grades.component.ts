@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { YearOfStudy, Disciplines , Grade} from '../models/curriculum';
+import { YearOfStudy, Disciplines , Grade, GradeDiscipline} from '../models/curriculum';
+import { EnrolService } from '../services/enrol.service';
+import { AuthService } from '../Servicies/auth.service';
 
 @Component({
   selector: 'app-view-grades',
@@ -7,103 +9,33 @@ import { YearOfStudy, Disciplines , Grade} from '../models/curriculum';
   styleUrls: ['./view-grades.component.css']
 })
 export class ViewGradesComponent implements OnInit {
-  gradesForStudent: {disciplineName: string, disciplineGrade: Number}[]=[];
-  gradeForDiscipline: Number[]=[];
-  disciplines: Disciplines[]=[
-    {
-      id: 0,
-      name: "asc",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    {
-      id: 1,
-      name: "asc2",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia2",
-      curriculum: {id:1, text:"facem2 "}
-    },
-    {
-      id: 2,
-      name: "asc3",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: {id:2, text:"facem3 "}
-    },
-    {
-      id: 3,
-      name: "asc3",
-      optional: false,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: {id:3, text:"facem3 "}
-    },
-    {
-      id: 4,
-      name: "asc4",
-      optional: true,
-      credits: 2,
-      teacherName: "Emilia4",
-      curriculum: {id:4, text:"facem4 "}
-    }
+  gradesForStudent: GradeDiscipline[]=[];
+  currentYear!:number;
+  yearOfStudy: YearOfStudy[]=[];
+  constructor(private enrolService: EnrolService, private authService: AuthService) {}
 
-  ];
-  yearOfStudy: YearOfStudy[]=[
-    {
-      id: 1,
-      year:1,
-      specializationName:" mate info 1"
-    },
-    {
-      id: 2,
-      year:2,
-      specializationName:" slcnsdjbc"
-    },
-    
-
-  ];
-  grades: Grade[]=[
-    {
-      id: 1,
-      studentId:1,
-      disciplineId:1,
-      value:10
-    },
-    {
-      id: 2,
-      studentId:1,
-      disciplineId:1,
-      value:9
-    },
-    {
-      id: 3,
-      studentId:1,
-      disciplineId:2,
-      value:2
-    },
-    {
-      id: 3,
-      studentId:1,
-      disciplineId:3,
-      value:10
-    },
-
-
-  ];
-  currentId: number = 0;
-  constructor() {
+  getAllYearOfStudyByStudent(){ //intri pe pagina, se apeleaza asta
+    this.enrolService.getAllYearOfStudyByStudent(this.authService.getUsername()).subscribe(
+      allYear=>this.yearOfStudy=allYear
+    )
   }
 
   ngOnInit(): void {
-    for(var i=0;i<this.disciplines.length;i++)
-    {
-    this.getGradesForDiscipline(this.disciplines[i].id);}
+    this.getAllYearOfStudyByStudent()
   }
 
+  getCurrentYear(num:number){
+    this.currentYear = num-1;
+  }
+
+  getGrades(){
+    this.enrolService.getGradesByYearOfStudy(this.yearOfStudy[this.currentYear],this.authService.getUsername()).subscribe(
+      allGrades=>this.gradesForStudent=allGrades
+    )
+  }
+
+
+  /*
   getNameWithId(id: number): string{
     for(var i=0;i<this.disciplines.length;i++)
     if(this.disciplines[i].id===id) return this.disciplines[i].name;
@@ -117,6 +49,6 @@ export class ViewGradesComponent implements OnInit {
       this.gradesForStudent.push(obj)
     console.log(obj);}
   
-  }
+  }*/
 
 }

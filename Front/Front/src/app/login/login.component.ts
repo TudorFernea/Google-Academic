@@ -70,7 +70,7 @@ export class LoginComponent {
             else if(role == "TEACHER")
               this.router.navigateByUrl('teacherPage');
             else if(role == "CHIEF")
-              this.router.navigateByUrl('teacherPage');
+              this.router.navigateByUrl('chiefTeacherPage');
           },
         ()=>
           {

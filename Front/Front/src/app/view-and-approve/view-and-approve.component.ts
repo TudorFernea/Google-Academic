@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Disciplines, Grade, YearOfStudy } from '../models/curriculum';
+import { Component, OnInit, Optional } from '@angular/core';
+import { ApprovedOptional, Disciplines, Grade, OptionalApproval, YearOfStudy } from '../models/curriculum';
+import { TeacherService } from '../services/teacher.service';
+import { AuthService } from '../Servicies/auth.service';
 
 @Component({
   selector: 'app-view-and-approve',
@@ -10,6 +12,7 @@ export class ViewAndApproveComponent implements OnInit {
   submitButtonDisabled: boolean = false;
   approveButton: boolean[]=[false,false,false,false];
   disapproveButon: boolean[]=[false,false,false,false];
+
   listWithDiscipline: {discipline: Disciplines, approved: boolean, noStudents: number, aproveButton: boolean, disapproveButton:boolean, submitButton:boolean}[]=[
     {discipline: {
       id: 0,
@@ -64,122 +67,85 @@ export class ViewAndApproveComponent implements OnInit {
     aproveButton: false,
     disapproveButton: false,
     submitButton: false}
-   
-  
+
+
   ]
   optinalDisciplines: Disciplines[]=[
 
-    {
-      id: 11110,
-      name: "asc",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia",
-      curriculum: {id:0, text:"facem "}
-    },
-    {
-      id: 11111,
-      name: "asc2",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia2",
-      curriculum: {id:1, text:"facem2 "}
-    },
-    {
-      id: 2,
-      name: "asc3",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: {id:2, text:"facem3 "}
-    },
-    {
-      id: 3,
-      name: "asc3",
-      optional: true,
-      credits: 7,
-      teacherName: "Emilia3",
-      curriculum: {id:3, text:"facem3 "}
-    },
-    {
-      id: 4,
-      name: "asc4",
-      optional: true,
-      credits: 2,
-      teacherName: "Emilia4",
-      curriculum: {id:4, text:"facem4 "}
-    }
 
-  ];
-  yearOfStudy: YearOfStudy[]=[
-    {
-      id: 1,
-      year:1,
-      specializationName:" mate info 1"
-    },
-    
-
-  ];
-  grades: Grade[]=[
-    {
-      id: 1,
-      studentId:1,
-      disciplineId:1,
-      value:10
-    },
-    {
-      id: 2,
-      studentId:1,
-      disciplineId:1,
-      value:9
-    },
-    {
-      id: 3,
-      studentId:1,
-      disciplineId:2,
-      value:2
-    },
-    {
-      id: 3,
-      studentId:1,
-      disciplineId:3,
-      value:10
-    },
+  approvedOptionals: ApprovedOptional[]=[]
 
 
-  ];
-  constructor() { }
+  constructor(private teacherService: TeacherService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.teacherService.getAllOptionalByFaculty(this.authService.getUsername()).subscribe(
+      optionals=>{
+        this.optinalDisciplines=optionals,
+        this.setList()
+      }
+
+    )
   }
+
+  setList(){
+    console.log(this.optinalDisciplines);
+    for(let i=0;i<this.optinalDisciplines.length; i++)
+    {
+        let discipline:Disciplines =  this.optinalDisciplines[i];
+        let approved = false;
+        let noStudents = 0;
+        let aproveButton = false;
+        let disapproveButton = false;
+        let approval:OptionalApproval = {discipline,approved,noStudents,aproveButton,disapproveButton};
+        this.listWithDiscipline.push(approval);
+    }
+    console.log(this.listWithDiscipline);
+  }
+
   setApprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-    if(this.listWithDiscipline[i].discipline.id===disciplineId) 
-    {this.listWithDiscipline[i].approved=true; 
+    if(this.listWithDiscipline[i].discipline.id===disciplineId)
+    {this.listWithDiscipline[i].approved=true;
       this.listWithDiscipline[i].aproveButton=true;
        this.listWithDiscipline[i].disapproveButton=false;}
 
-   
+
   }
   setDisapprove(disciplineId: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
-    if(this.listWithDiscipline[i].discipline.id===disciplineId) 
-    {this.listWithDiscipline[i].approved=false; 
-      this.listWithDiscipline[i].noStudents=0; 
+    if(this.listWithDiscipline[i].discipline.id===disciplineId)
+    {this.listWithDiscipline[i].approved=false;
+      this.listWithDiscipline[i].noStudents=0;
       this.listWithDiscipline[i].aproveButton=false;
       this.listWithDiscipline[i].disapproveButton=true;
       this.listWithDiscipline[i].submitButton=true;
     }
 
   }
- 
+
+  assignOptionals(){
+    for(var i=0;i<this.listWithDiscipline.length;i++)
+      if(this.listWithDiscipline[i].approved!=false)
+      {
+        let id = this.listWithDiscipline[i].discipline.id;
+        let noStudents = this.listWithDiscipline[i].noStudents;
+        let optional:ApprovedOptional={id, noStudents};
+        this.approvedOptionals.push(optional);
+      }
+    this.teacherService.assignOptionals(this.approvedOptionals).subscribe(
+      ()=>alert("Assigned optionals")
+    )
+  }
+
   myFunction() {
     this.submitButtonDisabled = true;
+    this.assignOptionals()
   }
   setNoStudents(disciplineid: number, noStud: number){
     for(var i=0;i<this.listWithDiscipline.length;i++)
     {
-      if(this.listWithDiscipline[i].discipline.id===disciplineid) 
+      if(this.listWithDiscipline[i].discipline.id===disciplineid)
       {
         this.listWithDiscipline[i].noStudents=noStud;
         this.listWithDiscipline[i].submitButton = true;
@@ -188,6 +154,6 @@ export class ViewAndApproveComponent implements OnInit {
     }
 
   }
-  
+
 
 }

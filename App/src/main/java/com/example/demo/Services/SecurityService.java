@@ -141,8 +141,9 @@ public class SecurityService implements UserDetailsService {
         }
         if (teacherRepository.findTeacherById(id) != null) {
             Teacher teacher = teacherRepository.findTeacherById(id);
-            result.add("TEACHER");
-            if(teacher.getIsChief() == true)
+            if(teacher.getIsChief() == false)
+                result.add("TEACHER");
+            else
                 result.add("CHIEF");
         }
         if (adminRepository.findAdminById(id) != null) {
