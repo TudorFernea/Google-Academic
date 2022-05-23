@@ -155,4 +155,8 @@ h1{
      color: black;
     
    }
-   
+   button[disabled]{
+ 
+    background-color: #c3e0ff
+    
+  }

@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'addDiscipline', component: AddDisciplineComponent},
   {path: 'addGrade', component: AddGradeComponent},
   {path: 'chiefTeacherPage', component: ChiefTeacherPageComponent},
-  {path: 'viewAndAprove', component: ViewAndApproveComponent}
+  {path: 'viewAndAprove', component: ViewAndApproveComponent},
 
   {path: 'assignGradeToStudent/:id', component: AssignGradeToStudentComponent}
 
