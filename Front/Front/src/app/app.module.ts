@@ -29,6 +29,11 @@ import { ViewDisciplineGivenByTeacherComponent } from './view-discipline-given-b
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { SignContractComponent } from './sign-contract/sign-contract.component';
+import { AdministrativeStuffComponent } from './administrative-stuff/administrative-stuff.component';
+import { PrintListStudentsComponent } from './print-list-students/print-list-students.component';
+import { ViewResultsStudentsComponent } from './view-results-students/view-results-students.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +54,12 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ChiefTeacherPageComponent,
     ViewAndApproveComponent,
     SeeStatisticsComponent,
-    ViewDisciplineGivenByTeacherComponent
+    ViewDisciplineGivenByTeacherComponent,
+    SignContractComponent,
+    AdministrativeStuffComponent,
+    PrintListStudentsComponent,
+    ViewResultsStudentsComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,57 @@
+<div class="Chenar">
+    <br>
+    <h4 class=" title2 "
+        style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 30px; margin: 0%; padding-top: 20px;">
+        <b>View students classified in decreasing order of obtained results. </b></h4>
+    <br>
+
+    <div style="text-align: center" id="outer">
+
+        <select id="group" (change)="changeGroup($event)"
+            style="background-color: #268aef; color: white;border: 0; height: 20px; text-align: center; width: 250px;">
+            <option value="0" disabled selected>Select your option</option>
+            <option *ngFor="let group of groups" value="{{group}}">Group: {{group}} Specialization:</option>
+        </select>
+        &nbsp;
+       
+
+    </div>
+
+
+    <br>
+
+
+    <div>
+        <div style="position: relative; margin-left: 25px;
+       margin-right: 25px;">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr
+                        style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Result</th>
+                    </tr>
+
+                    <tbody id="disciplinesAndOptinals">
+
+                        <tr *ngFor="let student of studentsResults">
+                            <td> {{student.student.firstName}}</td>
+                            <td> {{student.student.lastName}}</td>
+                            <td> {{student.result}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            
+            </div>
+
+        </div>
+        <br>
+
+       
+    </div>
+
+
+</div>
